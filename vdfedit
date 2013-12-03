@@ -2,416 +2,140 @@
 #######################################
 # Python Valve Data File (VDF) Editor #
 # Version: 14                         #
+# Utilizes PyVDF                      #
+# https://github.com/noriah/PyVDF  #
 # Author: noriah              #
+# Copyright (c) 2013 noriah   #
 #######################################
-
-'''
-
-
-README:
-Usage: (filename) [path[=value][,path]]
-
-make the file executeable and use it as you would a normal command
-put the path to the file you want to parse after the command
-if you want a specific value, place the path to it after the file path
-multiple values can be retrieved by seperating paths with a ','
-
-if the path contains a key with periods in it, place that key in brackets: '[' and ']'
-
-ex: UserLocalConfigStore.DownloadRates.221.CDN.[content3.steampowered.com].Expires
-as found in the Steam/userdata/(id)/config/localconfig.vdf file
-
-values will be returned seperated by the character in the variable 'ARRAY_JOINER', editable below
-
-Keys and Values of the file must be inclosed by quotes (")
-
-If an error occurs, the most recent path parsed will be returned, the error will be below it.
-The path will be seperated by periods
-
-READING PATHS
------
-Say we have a file that looks like this
-
-"AppState"
-{
-	"appID"		"220"
-	"UserConfig"
-	{
-		"name"		"Half-Life 2"
-		"GameID"		"220"
-	}
-}
-
-To get the value of GameID, your path would look like this: 'AppState.UserConfig.GameID'
-
-or to get appID, just like this: 'AppState.appID'
-returning '220'
-
-to get both appID and name, the path string would look like this: AppState.appID,AppState.UserConfig.name
-this would return: '220+Half-Life 2'
-
-
-WRITING VALUES TO PATHS
------
-
-To write a value, place an equal sign '=' after the path, then the value
-ex: AppState.appID=230
-
-You can also create new path entries
-Just make up a new path
-AppState.Foo.Bar.FooBar=BarFoo
-'''
 
 import sys
 import re
 from collections import OrderedDict
 
-
-C_QUOTE = "\""
-C_BRACE_BEGIN = "{"
-C_BRACE_END = "}"
-C_CONTROL = (C_BRACE_BEGIN, C_BRACE_END)
-C_NEW_LINE = "\n"
-C_TAB = "\t"
-C_SPACE = " "
-C_RETURN = "\r"
-C_WHITESPACE = (C_TAB, C_SPACE, C_NEW_LINE, C_RETURN)
-C_ESCAPE = "\\"
+from PyVDF.VDFParser import VDFParser
+from PyVDF.VDFWriter import VDFWriter
 
 ARRAY_JOINER = "+"
 
-class VDFParser:
-	def __init__(self, filename):
-		try:
-			with open(filename) as filec:
-				fdata = filec.read()
-				filec.close()
-				self.error = False
-		except IOError as e:
-			print("Could not open '" + filename + "' for reading.")
-			print("(This is okay if we are making a new file)")
-			self.error = True
-			return
+class VDFArgsParser:
+	def __init__(self, string):
+		self.data = list()
+		self.chars = list(string)
+		self.chars.append(None)
+		self.chars.append(None)
+		self.__parse__()
 
-		fdata = re.sub('!//.*!', '', fdata)
-		self.chars = list(fdata)
-		self.it = iter(self.chars)
-		self.lastchar = ''
-		self.curchar = ''
-		self.nextchar = ''
-		self.running = True
-		self.data = OrderedDict()
-		self.key = ''
-		self.value = ''
-		self.grab = False
-		self.grabKey = True
-		self.string = ''
-		self.chomp()
-
-	def chomp(self):
-		self.lastchar = self.curchar
-		self.curchar = self.nextchar
-		try:
-			self.nextchar = self.it.next()
-		except StopIteration:
-			self.nextchar = None
-		return self.curchar
-
-	def chompSpace(self):
-		self.chomp()
-		return self.isSpace()
-
-	def getChar(self):
-		return self.curchar
-
-	def isControl(self):
-		return self.curchar in C_CONTROL
-
-	def isOpenBrace(self):
-		return self.curchar == C_BRACE_BEGIN
-
-	def isCloseBrace(self):
-		return self.curchar == C_BRACE_END
-
-	def isSpace(self):
-		return self.curchar in C_WHITESPACE
-
-	def isQuote(self):
-		if self.curchar == C_QUOTE and self.lastchar != C_ESCAPE:
-			return True
-		elif self.curchar == C_QUOTE and self.lastchar == C_ESCAPE:
-			return False
-		elif self.curchar != C_QUOTE:
-			return False
-		else:
-			return False
-
-	def isText(self):
-		if not self.isSpace() and not self.isQuote() and not self.isControl():
-			return True
-		else:
-			return False
-
-	def updateInfo(self):
-		if self.grabKey:
-			self.key = self.string
-			self.string = ''
-			self.grabKey = False
-		else:
-			self.value = self.string
-			self.string = ''
-			self.grabKey = True
-
-	def parse(self):
-		if self.error:
-			return None
-		path = ''
+	def __parse__(self):
+		string = ''
+		array = list()
 		quoted = False
-		reading = False
-		i = 0
-		array = wrap_obj(self.data)
-		while self.running:
-			i += 1
-			if not reading:
-				while self.chompSpace():
-					continue
-			else:
-				self.chomp()
-			if self.curchar is None:
-				break;
-
-			if self.isQuote():
-				if reading:
-					reading = False
-					self.updateInfo()
-					quoted = False
+		char = None
+		lastchar = None
+		nextchar = None
+		comma = ','
+		obrace = '{'
+		cbrace = '}'
+		escape = '\\'
+		for i, nextchar in enumerate(self.chars):
+			if i == 0: pass
+			elif char is None: array.append(string)
+			elif char == "\n": pass
+			elif char == escape:
+				if nextchar != obrace and nextchar != cbrace: string+= char
+				else: pass
+			elif char == obrace:
+				if quoted or lastchar == escape: string += char
+				else: quoted = True
+			elif char == cbrace:
+				if lastchar == escape: string += char
+				else: quoted = False
+			elif char == comma:
+				if quoted: string += char
 				else:
-					reading = True
-					quoted = True
+					array.append(string)
+					string = ''
+			else: string += char
+			lastchar = char
+			char = nextchar
+		self.data = array
 
-			elif self.isText():
-				self.string += self.curchar
-				reading = True
-			
-			elif self.isSpace():
-				if reading:
-					if not quoted:
-						reading = False
-						self.updateInfo()
-					else:
-						self.string += self.curchar
-			
-			elif self.isOpenBrace():
-				if not quoted:	
-					if self.grabKey:
-						sys.exit("Something went wrong near here: " + CheckPath(path, "+"))
-
-					if array().has_key(self.key):
-						sys.exit("Key Already Exists: " + CheckPath(path + "+" + self.key, "+"))
-					array()[self.key] = OrderedDict()
-					array = wrap_obj(array()[self.key])
-
-					if path == '':
-						path += self.key
-					else:
-						path += '+' + self.key
-
-					self.key = ''
-					self.grabKey = True
-
-			elif self.isCloseBrace():
-				if not quoted:	
-					if not self.grabKey:
-						sys.exit("Something went wrong near here: " + CheckPath(path, "+"))
-					array = wrap_obj(self.data)
-					full_path = path.split('+')
-					new_path = ''
-					if len(full_path) > 0:
-						for x in full_path[:-1]:
-							if new_path == '':
-								new_path += x
-							else:
-								new_path += '+' + x
-							array = wrap_obj(array()[x])
-					path = new_path
-					self.grabKey = True
-
-			if len(self.key) > 0 and len(self.value) > 0:
-				if array().has_key(self.key):
-					sys.exit("Key Already Exists: " + CheckPath(path + "+" + self.key, "+"))
-				array()[self.key] = self.value
-				self.key = ''
-				self.value = ''
-
+	def getData(self):
 		return self.data
-
-
-def wrap_obj(obj):
-	def wrap():
-		return obj
-	return wrap
-
-
-def ArrayParse(array, paths):
-	out = list()
-	for p in paths:
-		arrtmp = array
-		path = list()
-		p = re.sub('.\[', '"', re.sub('\].', '"', p)).split('"')
-		q = 0
-		for x in p:
-			q = q + 1
-			if q % 2 != 0:
-				path += x.split(".")
-			else:
-				path.append(x)
-
-		found = True
-		for c in path:
-			if arrtmp.has_key(c) > 0:
-				arrtmp = arrtmp[c]
-			else:
-				found = False
-		if found:
-			out.append(arrtmp)
-	return out
-
-
-def ArrayWrite(array, paths):
-	if not isinstance(array, OrderedDict):
-		array = OrderedDict()
-
-	for p in paths:
-		p = p.split("=")
-		value = p[1]
-		p = p[0]
-		path = list()
-		p = re.sub('.\[', '"', re.sub('\].', '"', p)).split('"')
-		q = 0
-		for x in p:
-			q = q + 1
-			if q % 2 != 0:
-				path += x.split(".")
-			else:
-				path.append(x)
-
-		pl = len(path)
-		a = wrap_obj(array);
-		last = ""
-		for i, c in enumerate(path):
-			if (not a().has_key(c)) and (i < pl):
-				a()[c] = ""
-			if not isinstance(a()[c], OrderedDict) and i < pl - 1:
-				a()[c] = OrderedDict()
-			if not i >= pl - 1:
-				a = wrap_obj(a()[c])
-			last = c
-		if value == "":
-			a().pop(last, None)
-		else:
-			a()[last] = value
-	return array
-
 
 def FlattenArray(array):
 	out = list()
 	for a in array.keys():
-		if re.search("\.", a) != None:
-			b = "[" + a + "]"
-		else:
-			b = a
+		if re.search("\.", a) != None: b = "[" + a + "]"
+		else: b = a
 		if isinstance(array[a], OrderedDict):
 			out.append(b)
 			c = FlattenArray(array[a])
 			c = [b + '.{0}'.format(i) for i in c]
 			out += c
-		else:
-			out.append(b + " " + array[a])
+		else: out.append(b + " " + array[a])
 	return out
 
 def FlattenArrayExport(array):
 	out = list()
 	for a in array.keys():
-		if re.search("\.", a) != None:
-			b = "[" + a + "]"
-		else:
-			b = a
+		if re.search("\.", a) != None: b = "[" + a + "]"
+		else: b = a
 		if isinstance(array[a], OrderedDict):
 			c = FlattenArrayExport(array[a])
 			c = [b + '.{0}'.format(i) for i in c]
 			out += c
 		else:
-			out.append(b + "=" + array[a])
+			array[a] = re.sub('{', '\\{', re.sub('}', '\\}', array[a]))
+			if re.search(",", array[a]) is not None: r = '{' + array[a] + '}'
+			else: r = array[a]
+			out.append(b + "=" + r)
 	return out
 
-def CheckPath(string, splitter):
-	string = string.split(splitter)
-	for i, s in enumerate(string):
-		if re.search("\.", s) != None:
-			string[i] = "[" + s + "]"
-	return ".".join(string)
-
-def VDFFormat(array, tab=''):
-	string = ''
-	for k, v in array.iteritems():
-		string += tab + '"' + k + '"'
-		if isinstance(v, OrderedDict):
-			string += C_NEW_LINE + tab + '{' + C_NEW_LINE
-			string += VDFFormat(v, tab + C_TAB)
-			string += tab + '}' + C_NEW_LINE
+def main():
+	if not sys.stdin.isatty():
+			var2 = sys.stdin.read()
+			var2 = re.sub('\\n', '', var2)
+			sys.argv.append(var2)
+	length = len(sys.argv)
+	if length > 1:
+		files = sys.argv[1].split(',')
+		if len(files) > 1:
+			readFile = files[0]
+			writeFile = files[1]
 		else:
-			string += C_TAB + C_TAB + '"' + v + '"' + C_NEW_LINE
-	return string
+			readFile = files[0]
+			writeFile = files[0]
+		vdf = VDFParser(readFile)
+		if length > 2:
+			if sys.argv[2] == '-g':
+				print(',\n'.join(FlattenArrayExport(vdf.getData())))
+				return
+			args = VDFArgsParser(','.join(sys.argv[2:])).getData()
+			finds = list()
+			sets = list()
+			for p in args:
+				if re.search("=", p) is None: finds.append(p)
+				else: sets.append(p)
+			if len(sets):
+				writer = VDFWriter(writeFile, vdf.getData())
+				writer.edit(sets)
+				writer.write()
+			if len(finds):
+				founds = vdf.findMany(finds)
+				for f in founds:
+					if isinstance(f, OrderedDict):
+						founds.remove(f)
+						print("\n".join(FlattenArray(f)))
+				if len(founds): print(ARRAY_JOINER.join(founds))
+		else:
+			if vdf != None: print("\n".join(FlattenArray(vdf.getData())))
 
-
-def VDFWrite(filename, array):
-	if not isinstance(array, OrderedDict):
-		if isinstance(array, list):
-			print(array)
-			sys.exit("^^^ This is not an Dictionary array!")
-		sys.exit("Array of data is not a Dictionary Array: " + array)
-
-	data = VDFFormat(array)
-	filec = open(filename, 'w')
-	filec.write(data)
-	filec.close()
-
-
-if len(sys.argv) > 1:
-	files = sys.argv[1].split(',')
-	if len(files) > 1:
-		readFile = files[0]
-		writeFile = files[1]
 	else:
-		readFile = files[0]
-		writeFile = files[0]
-	vdf = VDFParser(readFile)
-	vdf = vdf.parse()
-	if len(sys.argv) > 2:
-		if sys.argv[2] == '-g':
-			print(',\\\n'.join(FlattenArrayExport(vdf)))
-		finds = list()
-		sets = list()
-		paths = sys.argv[2].split(',')
-		for p in paths:
-			if re.search("=", p) == None:
-				finds.append(p)
-			else:
-				sets.append(p)
-		if len(sets) > 0:
-			VDFWrite(writeFile, ArrayWrite(vdf, sets))
-		if len(finds) > 0:
-			founds = ArrayParse(vdf, finds)
-			for f in founds:
-				if isinstance(f, OrderedDict):
-					founds.remove(f)
-					print("\n".join(PrettyArray(f)))
-			if len(founds) > 0:
-				print(ARRAY_JOINER.join(founds))
-	else:
-		if vdf != None:
-			print("\n".join(FlattenArray(vdf)))
-else:
-	print(sys.argv[0] + ": Missing Arguments")
-	print("Usage: (filename) [path[=value][,path]]")
-	print("Returned values are seperated by a '" + ARRAY_JOINER + "'.")
+		print(sys.argv[0] + ": Missing Arguments")
+		print("Usage: (filename) [path[=value][,path]]")
+		print("Returned values are seperated by a '" + ARRAY_JOINER + "'.")
+
+	return
+
+if __name__ == "__main__":
+	main()
