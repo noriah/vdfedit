@@ -1,1 +1,0 @@
-/home/wolf/Projects/PyVDF/__init__.py
