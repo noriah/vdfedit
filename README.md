@@ -4,7 +4,14 @@ vdfedit
 Easy and fast Python Valve Data Format (VDF) Reader and Writer
 
 ###What is a VDF?
+A VDF, or Valve Data Format file, is a file that uses Valve's KeyValues format.
+
 https://developer.valvesoftware.com/wiki/KeyValues#File_Format
+####Files that use the KeyValues format
+.vdf (Valve Data Format)
+.acf (Application Cache File)
+.vmt (Valve Material Type)
+Some .res (Resource File)
 
 What is vdfedit?
 --
