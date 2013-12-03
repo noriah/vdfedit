@@ -15,11 +15,31 @@ https://developer.valvesoftware.com/wiki/KeyValues#File_Format
 * Some .txt (Text File), Usually those found in Source Engine bin Folder
 * Some .res (Resource File) [NOT YET IMPLMENTED]
 
+Installation
+--
+If you are downloading a zip, you need to get [PyVDF] [1]. Place `__init__.py`, `VDFParser.py`, and `VDFWriter.py` into the empty PyVDF folder inside the vdfedit-master folder.
+```
+vdfedit
+├── PyVDF
+│   ├── __init__.py
+│   ├── VDFParser.py
+│   └── VDFWriter.py
+```
+If cloning with git, clone how you normally would, then run
+```
+git submodule init
+git submodule update
+```
+You will probably have to make vdfedit executable
+```
+chmod +x vdfedit
+```
+Thats it.
 
 What is vdfedit?
 --
 vdfedit is a program that makes use of [PyVDF] [1] to create an easy to use VDF editor.
-[1]: https://github.com/noriah/PyVDF "PyVDF"
+
 
 Using VDF Edit is simple:
 `vdfedit (filename)[,file to write to] [path[,nextpath]`
@@ -46,3 +66,4 @@ To get an example of how to format a file, find a vdf on your computer (Try in y
 ####Getting Paths
 Inserting a path after the filename will return the value for that path, or nothing if the path was not found
 
+[1]: https://github.com/noriah/PyVDF "PyVDF"
