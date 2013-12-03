@@ -7,16 +7,19 @@ Easy and fast Python Valve Data Format (VDF) Reader and Writer
 A VDF, or Valve Data Format file, is a file that uses Valve's KeyValues format.
 
 https://developer.valvesoftware.com/wiki/KeyValues#File_Format
-####Files that use the KeyValues format
-.vdf (Valve Data Format)
-.acf (Application Cache File)
-.vmt (Valve Material Type)
-Some .res (Resource File)
+####Valve Files that use the KeyValues format
+* .vdf (Valve Data Format)
+* .acf (Application Cache File)
+* .vmt (Valve Material Type)
+* Some .cfg (Configuration File), Usually those found in Source Engine bin Folder
+* Some .txt (Text File), Usually those found in Source Engine bin Folder
+* Some .res (Resource File) [NOT YET IMPLMENTED]
+
 
 What is vdfedit?
 --
-vdfedit is a program that makes use of my PyVDF library to create an easy to use VDF editor.
-https://github.com/noriah/PyVDF
+vdfedit is a program that makes use of [PyVDF] [1] to create an easy to use VDF editor.
+[1]: https://github.com/noriah/PyVDF "PyVDF"
 
 Using VDF Edit is simple:
 `vdfedit (filename)[,file to write to] [path[,nextpath]`
