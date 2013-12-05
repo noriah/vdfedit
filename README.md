@@ -17,18 +17,11 @@ https://developer.valvesoftware.com/wiki/KeyValues#File_Format
 
 Installation
 --
-If you are downloading a zip, you need to get [PyVDF] [1]. Place `__init__.py`, `VDFParser.py`, and `VDFWriter.py` into the empty PyVDF folder inside the vdfedit-master folder.
+You need to get [PyVDF] [1]. Place `PyVDF.py` into the root folder vdfedit-master folder.
 ```
 vdfedit
-├── PyVDF
-│   ├── __init__.py
-│   ├── VDFParser.py
-│   └── VDFWriter.py
-```
-If cloning with git, clone how you normally would, then run
-```
-git submodule init
-git submodule update
+├── vdfedit
+├── PyVDF.py
 ```
 You will probably have to make vdfedit executable
 ```
