@@ -10,11 +10,9 @@
 
 import sys
 import re
-import profile
 from collections import OrderedDict
 
-from PyVDF.VDFParser import VDFParser
-from PyVDF.VDFWriter import VDFWriter
+from PyVDF import *
 
 ARRAY_JOINER = "+"
 
@@ -139,4 +137,4 @@ def main():
 	return
 
 if __name__ == "__main__":
-	profile.run('main()')
+	main()
