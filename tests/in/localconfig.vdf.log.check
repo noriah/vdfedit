@@ -413,6 +413,7 @@ UserLocalConfigStore.News
 UserLocalConfigStore.News.NotifyAvailableGames 1
 UserLocalConfigStore.News.Messages
 UserLocalConfigStore.News.Messages.[Bar.Foo] Foo.Bar
+UserLocalConfigStore.DownloadRates 
 UserLocalConfigStore.[StartupState.Friends] 1
 UserLocalConfigStore.depots
 UserLocalConfigStore.depots.551
