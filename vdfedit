@@ -10,6 +10,7 @@
 
 import sys
 import re
+import profile
 from collections import OrderedDict
 
 from PyVDF.VDFParser import VDFParser
@@ -118,7 +119,7 @@ def main():
 				else: sets.append(p)
 			if len(sets):
 				writer = VDFWriter(writeFile, vdf.getData())
-				writer.edit(sets)
+				writer.editMany(sets)
 				writer.write()
 			if len(finds):
 				founds = vdf.findMany(finds)
@@ -138,4 +139,4 @@ def main():
 	return
 
 if __name__ == "__main__":
-	main()
+	profile.run('main()')
