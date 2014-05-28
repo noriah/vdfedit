@@ -10,131 +10,121 @@
 
 import sys
 import re
+import argparse
 from collections import OrderedDict
 
 from PyVDF import *
 
-ARRAY_JOINER = "+"
-
-class VDFArgsParser:
-	def __init__(self, string):
-		self.data = list()
-		self.chars = list(string)
-		self.chars.append(None)
-		self.chars.append(None)
-		self.__parse__()
-
-	def __parse__(self):
-		string = ''
-		array = list()
-		quoted = False
-		char = None
-		lastchar = None
-		nextchar = None
-		comma = ','
-		obrace = '{'
-		cbrace = '}'
-		escape = '\\'
-		for i, nextchar in enumerate(self.chars):
-			if i == 0: pass
-			elif char is None: array.append(string)
-			elif char == "\n": pass
-			elif char == escape:
-				if nextchar != obrace and nextchar != cbrace: string+= char
-				else: pass
-			elif char == obrace:
-				if quoted or lastchar == escape: string += char
-				else: quoted = True
-			elif char == cbrace:
-				if lastchar == escape: string += char
-				else: quoted = False
-			elif char == comma:
-				if quoted: string += char
-				else:
-					array.append(string)
-					string = ''
-			else: string += char
-			lastchar = char
-			char = nextchar
-		self.data = array
-
-	def getData(self):
-		return self.data
-
 def FlattenArray(array):
-	out = list()
-	for a in array.keys():
-		if re.search("\.", a) != None: b = "[" + a + "]"
-		else: b = a
-		if isinstance(array[a], OrderedDict):
-			out.append(b)
-			c = FlattenArray(array[a])
-			c = [b + '.{0}'.format(i) for i in c]
-			out += c
-		else: out.append(b + " " + array[a])
-	return out
+    out = list()
+    for a in array.keys():
+        if re.search("\.", a) != None: b = "[" + a + "]"
+        else: b = a
+        if isinstance(array[a], dict):
+            out.append(b)
+            c = FlattenArray(array[a])
+            c = [b + '.{0}'.format(i) for i in c]
+            out += c
+        else: out.append(b + " " + array[a])
+    return out
 
 def FlattenArrayExport(array):
-	out = list()
-	for a in array.keys():
-		if re.search("\.", a) != None: b = "[" + a + "]"
-		else: b = a
-		if isinstance(array[a], OrderedDict):
-			c = FlattenArrayExport(array[a])
-			c = [b + '.{0}'.format(i) for i in c]
-			out += c
-		else:
-			array[a] = re.sub('{', '\\{', re.sub('}', '\\}', array[a]))
-			if re.search(",", array[a]) is not None: r = '{' + array[a] + '}'
-			else: r = array[a]
-			out.append(b + "=" + r)
-	return out
+    out = list()
+    for a in array.keys():
+        if re.search("\.", a) != None: b = "[" + a + "]"
+        else: b = a
+        if isinstance(array[a], OrderedDict):
+            c = FlattenArrayExport(array[a])
+            c = [b + '.{0}'.format(i) for i in c]
+            out += c
+        else:
+            array[a] = re.sub('{', '\\{', re.sub('}', '\\}', array[a]))
+            if re.search(",", array[a]) is not None: r = '{' + array[a] + '}'
+            else: r = array[a]
+            out.append(b + "=" + r)
+    return out
 
 def main():
-	if not sys.stdin.isatty():
-			var2 = sys.stdin.read()
-			var2 = re.sub('\\n', '', var2)
-			sys.argv.append(var2)
-	length = len(sys.argv)
-	if length > 1:
-		files = sys.argv[1].split(',')
-		if len(files) > 1:
-			readFile = files[0]
-			writeFile = files[1]
-		else:
-			readFile = files[0]
-			writeFile = files[0]
-		vdf = VDFParser(readFile)
-		if length > 2:
-			if sys.argv[2] == '-g':
-				print(',\n'.join(FlattenArrayExport(vdf.getData())))
-				return
-			args = VDFArgsParser(','.join(sys.argv[2:])).getData()
-			finds = list()
-			sets = list()
-			for p in args:
-				if re.search("=", p) is None: finds.append(p)
-				else: sets.append(p)
-			if len(sets):
-				writer = VDFWriter(writeFile, vdf.getData())
-				writer.editMany(sets)
-				writer.write()
-			if len(finds):
-				founds = vdf.findMany(finds)
-				for f in founds:
-					if isinstance(f, OrderedDict):
-						founds.remove(f)
-						print("\n".join(FlattenArray(f)))
-				if len(founds): print(ARRAY_JOINER.join(founds))
-		else:
-			if vdf != None: print("\n".join(FlattenArray(vdf.getData())))
 
-	else:
-		print(sys.argv[0] + ": Missing Arguments")
-		print("Usage: (filename) [path[=value][,path]]")
-		print("Returned values are seperated by a '" + ARRAY_JOINER + "'.")
+    parser = argparse.ArgumentParser(prog="vdfedit",
+                                     description="Read and Write VDF KeyValue Files")
 
-	return
+    parser.add_argument('infile',
+                        type=str,
+                        help="The file to Read",
+                        metavar="FILE")
+
+    parser.add_argument('-o', '--out',
+                        type=str,
+                        help="The file to Write out to Defaults to the infile",
+                        metavar="FILE",
+                        dest="outfile")
+
+    parser.add_argument('-g', '--get',
+                        action="append",
+                        type=str,
+                        help="Add a key to Search For",
+                        metavar="key",
+                        dest="gets")
+
+    parser.add_argument('-s', '--set',
+                        action="append",
+                        type=str,
+                        help="Add a key value pair to the vdf",
+                        metavar="key=value",
+                        dest="sets")
+
+    parser.add_argument('-d', '--delim',
+                        default="+",
+                        type=str,
+                        help="Set the string used to separate found values. Defaults to '+'",
+                        metavar="str",
+                        dest="delim")
+
+    # if not sys.stdin.isatty():
+    #   var2 = sys.stdin.read()
+    #   var2 = re.sub('\\n', '', var2)
+    #   sys.argv.append(var2)
+    # length = len(sys.argv)
+
+    args = parser.parse_args()
+
+    args.outfile = args.outfile if args.outfile else (args.infile if args.infile else None)
+
+    vdf = VDFParser(args.infile)
+    gets = args.gets
+    sets = args.sets
+
+    if args.gets is not None or args.sets is not None:
+        if args.gets is not None:
+            gets = vdf.findMany(args.gets)
+            for g in gets:
+                if isinstance(g, OrderedDict):
+                    gets.remove(g)
+                    print("\n".join(FlattenArray(g)).decode("string-escape"))
+            if len(gets):
+                print(args.delim.join(gets).decode("string-escape"))
+        
+        if args.sets is not None:
+            writer = VDFWriter(args.outfile, vdf.getData())
+            writer.editMany(args.sets)
+            writer.write()
+
+    else:
+        if vdf != None:
+            pass
+            #print("\n".join(FlattenArray(vdf.getData())))
+
 
 if __name__ == "__main__":
-	main()
+    import cProfile
+    pr = cProfile.Profile()
+    pr.enable()
+    main()
+    pr.disable()
+    pr.print_stats('cumulative')
+
+
+# if sys.argv[2] == '-g':
+#               print(',\n'.join(FlattenArrayExport(vdf.getData())).replace("\"", "\\\""))
+#               return
