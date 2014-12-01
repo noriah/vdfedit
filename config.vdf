@@ -1,4 +1,4 @@
-"UserLocalConfigStore"{
+"Store"{
  "friends"{
   "PersonaName"	"DJ Wolf"
   "SteamID"	"STEAM_0:0:33454113"
@@ -8,377 +8,373 @@
   "vbc"	"0"
  }
  "Software"{
-  "Valve"{
-   "Steam"{
-    "apps"{
-     "5"{
-      "LastPlayed"	"1368483928"
-     }
-     "205"{
-      "LastPlayed"	"86400"
-     }
-     "211"{
-      "LastPlayed"	"1368542950"
-     }
-     "215"{
-      "LastPlayed"	"86400"
-     }
-     "218"{
-      "LastPlayed"	"86400"
-     }
-     "219"{
-      "LastPlayed"	"86400"
-     }
-     "220"{
-      "LastPlayed"	"1406351605"
-      "BadgeData"	"020000000811"
-      "News"	"0"
-     }
-     "240"{
-      "LastPlayed"	"1416887069"
-      "BadgeData"	"020000000814"
-     }
-     "280"{
-      "LastPlayed"	"1340434800"
-     }
-     "310"{
-      "LastPlayed"	"1368485592"
-     }
-     "320"{
-      "LastPlayed"	"1400458151"
-     }
-     "340"{
-      "LastPlayed"	"86400"
-     }
-     "360"{
-      "LastPlayed"	"86400"
-     }
-     "380"{
-      "LastPlayed"	"1400436312"
-     }
-     "400"{
-      "LastPlayed"	"1406348760"
-     }
-     "410"{
-      "LastPlayed"	"86400"
-     }
-     "420"{
-      "LastPlayed"	"1400385831"
-     }
-     "440"{
-      "LastPlayed"	"1408143389"
-      "BadgeData"	"0a00000008141206080110011800"
-     }
-     "550"{
-      "LastPlayed"	"1406343842"
-      "BadgeData"	"0a00000008111206080110011800"
-     }
-     "570"{
-      "LastPlayed"	"1363244400"
-     }
-     "620"{
-      "LastPlayed"	"1410923329"
-      "BadgeData"	"0a00000008141206080110011800"
-     }
-     "629"{
-      "LastPlayed"	"1369779435"
-     }
-     "630"{
-      "LastPlayed"	"1332054000"
-     }
-     "730"{
-      "LastPlayed"	"1416883140"
-      "BadgeData"	"020000000814"
-     }
-     "1250"{
-      "LastPlayed"	"1406330097"
-      "BadgeData"	"020000000811"
-     }
-     "1840"{
-      "LastPlayed"	"1343977200"
-     }
-     "4000"{
-      "LastPlayed"	"1405940297"
-      "BadgeData"	"0a00000008101206080110011800"
-     }
-     "4010"{
-      "LastPlayed"	"1347433200"
-     }
-     "8600"{
-      "LastPlayed"	"1335510000"
-     }
-     "8980"{
-      "LastPlayed"	"1357113600"
-     }
-     "12900"{
-      "LastPlayed"	"1371490801"
-     }
-     "12910"{
-      "LastPlayed"	"1324713600"
-     }
-     "13140"{
-      "LastPlayed"	"1316329200"
-     }
-     "17500"{
-      "LastPlayed"	"86400"
-     }
-     "17505"{
-      "LastPlayed"	"86400"
-     }
-     "17520"{
-      "LastPlayed"	"1400480824"
-     }
-     "17525"{
-      "LastPlayed"	"1370987205"
-     }
-     "17550"{
-      "LastPlayed"	"86400"
-     }
-     "17580"{
-      "LastPlayed"	"86400"
-     }
-     "17700"{
-      "LastPlayed"	"86400"
-     }
-     "17740"{
-      "LastPlayed"	"86400"
-     }
-     "21930"{
-      "LastPlayed"	"86400"
-     }
-     "22380"{
-      "LastPlayed"	"1371503705"
-     }
-     "31280"{
-      "LastPlayed"	"1375668828"
-     }
-     "42690"{
-      "LastPlayed"	"1348902000"
-     }
-     "47870"{
-      "LastPlayed"	"1366527600"
-     }
-     "49520"{
-      "LastPlayed"	"1413323402"
-      "ViewedLaunchEULA"	"1"
-      "BadgeData"	"0a00000008141206080310011800"
-     }
-     "63200"{
-      "LastPlayed"	"86400"
-     }
-     "80747"{
-      "LastPlayed"	"86400"
-     }
-     "80762"{
-      "LastPlayed"	"86400"
-     }
-     "91900"{
-      "LastPlayed"	"1342854000"
-     }
-     "99900"{
-      "LastPlayed"	"1324713600"
-     }
-     "105600"{
-      "LastPlayed"	"1381712226"
-     }
-     "203850"{
-      "LastPlayed"	"1340175600"
-     }
-     "204360"{
-      "LaunchOptions"	"echo %command%;"
-     }
-     "204610"{
-      "LastPlayed"	"1345100400"
-     }
-     "205700"{
-      "LastPlayed"	"1345100400"
-     }
-     "212720"{
-      "LastPlayed"	"1343890800"
-     }
-     "218230"{
-      "LastPlayed"	"1353571200"
-     }
-     "219890"{
-      "LastPlayed"	"1401402813"
-      "BadgeData"	"02000000080b"
-     }
-     "223530"{
-      "LastPlayed"	"1375741367"
-     }
-     "230410"{
-      "LastPlayed"	"1409528296"
-     }
-     "234710"{
-      "LastPlayed"	"1404252015"
-     }
-     "235780"{
-      "LastPlayed"	"1369870021"
-     }
-     "243730"{
-      "LastPlayed"	"1376010504"
-     }
-     "560"{
-      "LastPlayed"	"1363219155"
-     }
-     "13260"{
-      "LastPlayed"	"1366071011"
-     }
-     "214850"{
-      "LastPlayed"	"1349563300"
-     }
-     "22000"{
-      "LastPlayed"	"1400401204"
-     }
-     "17410"{
-      "LastPlayed"	"1405661961"
-     }
-     "38740"{
-      "LastPlayed"	"1412830763"
-      "LaunchOptions"	"echo %command%; steam-game"
-      "BadgeData"	"020000000814"
-     }
-     "224760"{
-      "LastPlayed"	"1394576842"
-     }
-     "221640"{
-      "LastPlayed"	"1399117314"
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "218_Black Mesa"{
-      "News"	"0"
-      "LastPlayed"	"1400475046"
-     }
-     "251630"{
-      "LastPlayed"	"1413034259"
-      "LaunchOptions"	"echo %command%; steam-game"
-      "BadgeData"	"020000000814"
-     }
-     "286380"{
-      "LastPlayed"	"1401590561"
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "214770"{
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "242820"{
-      "LastPlayed"	"1403836237"
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "113020"{
-      "LastPlayed"	"1401611778"
-      "BadgeData"	"02000000080b"
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "221260"{
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "236090"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1405098521"
-      "BadgeData"	"020000000810"
-     }
-     "207750"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1401864753"
-     }
-     "241320"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1403467100"
-      "BadgeData"	"02000000080c"
-     }
-     "44200"{
-      "LaunchOptions"	"echo %command%"
-      "LastPlayed"	"1401926893"
-     }
-     "201040"{
-      "LastPlayed"	"1401927244"
-      "BadgeData"	"02000000080b"
-     }
-     "233250"{
-      "LastPlayed"	"1417384677"
-      "News"	"0"
-      "BadgeData"	"020000000814"
-     }
-     "282760"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1403854549"
-      "BadgeData"	"02000000080d"
-     }
-     "266010"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1403839676"
-      "BadgeData"	"02000000080c"
-     }
-     "290280"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1403850147"
-      "BadgeData"	"02000000080c"
-     }
-     "291070"{
-      "LastPlayed"	"1404543723"
-     }
-     "24740"{
-      "LastPlayed"	"1408259634"
-     }
-     "238460"{
-      "LastPlayed"	"1413063150"
-      "BadgeData"	"0a00000008141206080110011800"
-     }
-     "220200"{
-      "LastPlayed"	"1406852597"
-      "BadgeData"	"0a00000008111206080110011800"
-     }
-     "286080"{
-      "LastPlayed"	"1409546668"
-      "LaunchOptions"	"echo %command%; steam-game"
-     }
-     "228960"{
-      "ViewedLaunchEULA"	"1"
-     }
-     "233450"{
-      "LastPlayed"	"1411344363"
-      "BadgeData"	"020000000814"
-     }
-     "239030"{
-      "LaunchOptions"	"echo %command%;"
-      "LastPlayed"	"1411344599"
-      "BadgeData"	"020000000814"
-     }
-     "222140"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1412893784"
-      "BadgeData"	"020000000814"
-     }
-     "253030"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1413082576"
-      "BadgeData"	"020000000814"
-     }
-     "204240"{
-      "LastPlayed"	"1413063759"
-      "BadgeData"	"020000000814"
-     }
-     "234190"{
-      "LastPlayed"	"1413081901"
-      "BadgeData"	"020000000814"
-     }
-     "261640"{
-      "LastPlayed"	"1417224583"
-      "LaunchOptions"	"echo %command%; steam-game"
-      "BadgeData"	"020000000814"
-     }
-     "301520"{
-      "LaunchOptions"	"echo %command%; steam-game"
-      "LastPlayed"	"1413689254"
-      "BadgeData"	"020000000814"
-     }
-    }
-    "LastPlayedTimesSyncTime"	"1417245504"
-    "PlayerLevel"	"20"
-    "SSAVersion"	"2"
+  "apps"{
+   "5"{
+    "LastPlayed"	"1368483928"
+   }
+   "205"{
+    "LastPlayed"	"86400"
+   }
+   "211"{
+    "LastPlayed"	"1368542950"
+   }
+   "215"{
+    "LastPlayed"	"86400"
+   }
+   "218"{
+    "LastPlayed"	"86400"
+   }
+   "219"{
+    "LastPlayed"	"86400"
+   }
+   "220"{
+    "LastPlayed"	"1406351605"
+    "BadgeData"	"020000000811"
+    "News"	"0"
+   }
+   "240"{
+    "LastPlayed"	"1416887069"
+    "BadgeData"	"020000000814"
+   }
+   "280"{
+    "LastPlayed"	"1340434800"
+   }
+   "310"{
+    "LastPlayed"	"1368485592"
+   }
+   "320"{
+    "LastPlayed"	"1400458151"
+   }
+   "340"{
+    "LastPlayed"	"86400"
+   }
+   "360"{
+    "LastPlayed"	"86400"
+   }
+   "380"{
+    "LastPlayed"	"1400436312"
+   }
+   "400"{
+    "LastPlayed"	"1406348760"
+   }
+   "410"{
+    "LastPlayed"	"86400"
+   }
+   "420"{
+    "LastPlayed"	"1400385831"
+   }
+   "440"{
+    "LastPlayed"	"1408143389"
+    "BadgeData"	"0a00000008141206080110011800"
+   }
+   "550"{
+    "LastPlayed"	"1406343842"
+    "BadgeData"	"0a00000008111206080110011800"
+   }
+   "570"{
+    "LastPlayed"	"1363244400"
+   }
+   "620"{
+    "LastPlayed"	"1410923329"
+    "BadgeData"	"0a00000008141206080110011800"
+   }
+   "629"{
+    "LastPlayed"	"1369779435"
+   }
+   "630"{
+    "LastPlayed"	"1332054000"
+   }
+   "730"{
+    "LastPlayed"	"1416883140"
+    "BadgeData"	"020000000814"
+   }
+   "1250"{
+    "LastPlayed"	"1406330097"
+    "BadgeData"	"020000000811"
+   }
+   "1840"{
+    "LastPlayed"	"1343977200"
+   }
+   "4000"{
+    "LastPlayed"	"1405940297"
+    "BadgeData"	"0a00000008101206080110011800"
+   }
+   "4010"{
+    "LastPlayed"	"1347433200"
+   }
+   "8600"{
+    "LastPlayed"	"1335510000"
+   }
+   "8980"{
+    "LastPlayed"	"1357113600"
+   }
+   "12900"{
+    "LastPlayed"	"1371490801"
+   }
+   "12910"{
+    "LastPlayed"	"1324713600"
+   }
+   "13140"{
+    "LastPlayed"	"1316329200"
+   }
+   "17500"{
+    "LastPlayed"	"86400"
+   }
+   "17505"{
+    "LastPlayed"	"86400"
+   }
+   "17520"{
+    "LastPlayed"	"1400480824"
+   }
+   "17525"{
+    "LastPlayed"	"1370987205"
+   }
+   "17550"{
+    "LastPlayed"	"86400"
+   }
+   "17580"{
+    "LastPlayed"	"86400"
+   }
+   "17700"{
+    "LastPlayed"	"86400"
+   }
+   "17740"{
+    "LastPlayed"	"86400"
+   }
+   "21930"{
+    "LastPlayed"	"86400"
+   }
+   "22380"{
+    "LastPlayed"	"1371503705"
+   }
+   "31280"{
+    "LastPlayed"	"1375668828"
+   }
+   "42690"{
+    "LastPlayed"	"1348902000"
+   }
+   "47870"{
+    "LastPlayed"	"1366527600"
+   }
+   "49520"{
+    "LastPlayed"	"1413323402"
+    "ViewedLaunchEULA"	"1"
+    "BadgeData"	"0a00000008141206080310011800"
+   }
+   "63200"{
+    "LastPlayed"	"86400"
+   }
+   "80747"{
+    "LastPlayed"	"86400"
+   }
+   "80762"{
+    "LastPlayed"	"86400"
+   }
+   "91900"{
+    "LastPlayed"	"1342854000"
+   }
+   "99900"{
+    "LastPlayed"	"1324713600"
+   }
+   "105600"{
+    "LastPlayed"	"1381712226"
+   }
+   "203850"{
+    "LastPlayed"	"1340175600"
+   }
+   "204360"{
+    "LaunchOptions"	"echo %command%;"
+   }
+   "204610"{
+    "LastPlayed"	"1345100400"
+   }
+   "205700"{
+    "LastPlayed"	"1345100400"
+   }
+   "212720"{
+    "LastPlayed"	"1343890800"
+   }
+   "218230"{
+    "LastPlayed"	"1353571200"
+   }
+   "219890"{
+    "LastPlayed"	"1401402813"
+    "BadgeData"	"02000000080b"
+   }
+   "223530"{
+    "LastPlayed"	"1375741367"
+   }
+   "230410"{
+    "LastPlayed"	"1409528296"
+   }
+   "234710"{
+    "LastPlayed"	"1404252015"
+   }
+   "235780"{
+    "LastPlayed"	"1369870021"
+   }
+   "243730"{
+    "LastPlayed"	"1376010504"
+   }
+   "560"{
+    "LastPlayed"	"1363219155"
+   }
+   "13260"{
+    "LastPlayed"	"1366071011"
+   }
+   "214850"{
+    "LastPlayed"	"1349563300"
+   }
+   "22000"{
+    "LastPlayed"	"1400401204"
+   }
+   "17410"{
+    "LastPlayed"	"1405661961"
+   }
+   "38740"{
+    "LastPlayed"	"1412830763"
+    "LaunchOptions"	"echo %command%; steam-game"
+    "BadgeData"	"020000000814"
+   }
+   "224760"{
+    "LastPlayed"	"1394576842"
+   }
+   "221640"{
+    "LastPlayed"	"1399117314"
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "218_Black Mesa"{
+    "News"	"0"
+    "LastPlayed"	"1400475046"
+   }
+   "251630"{
+    "LastPlayed"	"1413034259"
+    "LaunchOptions"	"echo %command%; steam-game"
+    "BadgeData"	"020000000814"
+   }
+   "286380"{
+    "LastPlayed"	"1401590561"
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "214770"{
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "242820"{
+    "LastPlayed"	"1403836237"
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "113020"{
+    "LastPlayed"	"1401611778"
+    "BadgeData"	"02000000080b"
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "221260"{
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "236090"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1405098521"
+    "BadgeData"	"020000000810"
+   }
+   "207750"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1401864753"
+   }
+   "241320"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1403467100"
+    "BadgeData"	"02000000080c"
+   }
+   "44200"{
+    "LaunchOptions"	"echo %command%"
+    "LastPlayed"	"1401926893"
+   }
+   "201040"{
+    "LastPlayed"	"1401927244"
+    "BadgeData"	"02000000080b"
+   }
+   "233250"{
+    "LastPlayed"	"1417384677"
+    "News"	"0"
+    "BadgeData"	"020000000814"
+   }
+   "282760"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1403854549"
+    "BadgeData"	"02000000080d"
+   }
+   "266010"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1403839676"
+    "BadgeData"	"02000000080c"
+   }
+   "290280"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1403850147"
+    "BadgeData"	"02000000080c"
+   }
+   "291070"{
+    "LastPlayed"	"1404543723"
+   }
+   "24740"{
+    "LastPlayed"	"1408259634"
+   }
+   "238460"{
+    "LastPlayed"	"1413063150"
+    "BadgeData"	"0a00000008141206080110011800"
+   }
+   "220200"{
+    "LastPlayed"	"1406852597"
+    "BadgeData"	"0a00000008111206080110011800"
+   }
+   "286080"{
+    "LastPlayed"	"1409546668"
+    "LaunchOptions"	"echo %command%; steam-game"
+   }
+   "228960"{
+    "ViewedLaunchEULA"	"1"
+   }
+   "233450"{
+    "LastPlayed"	"1411344363"
+    "BadgeData"	"020000000814"
+   }
+   "239030"{
+    "LaunchOptions"	"echo %command%;"
+    "LastPlayed"	"1411344599"
+    "BadgeData"	"020000000814"
+   }
+   "222140"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1412893784"
+    "BadgeData"	"020000000814"
+   }
+   "253030"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1413082576"
+    "BadgeData"	"020000000814"
+   }
+   "204240"{
+    "LastPlayed"	"1413063759"
+    "BadgeData"	"020000000814"
+   }
+   "234190"{
+    "LastPlayed"	"1413081901"
+    "BadgeData"	"020000000814"
+   }
+   "261640"{
+    "LastPlayed"	"1417224583"
+    "LaunchOptions"	"echo %command%; steam-game"
+    "BadgeData"	"020000000814"
+   }
+   "301520"{
+    "LaunchOptions"	"echo %command%; steam-game"
+    "LastPlayed"	"1413689254"
+    "BadgeData"	"020000000814"
    }
   }
+  "LastPlayedTimesSyncTime"	"1417245504"
+  "PlayerLevel"	"20"
+  "SSAVersion"	"2"
  }
  "AppInfoChangeNumber"	"793799"
  "CloudKeyCRC"	"254003530"
@@ -413,71 +409,6 @@
  }
  "News"{
   "NotifyAvailableGames"	"1"
-  "Messages"{
-   "1099186854071994389"	"1"
-   "1099187643415576622"	"1"
-   "1099188123243368955"	"1"
-   "1099188123246235367"	"1"
-   "1099188214016856388"	"1"
-   "1099187643419200030"	"1"
-   "1081174352184088563"	"1"
-   "1081174352180121656"	"1"
-   "1081174352184496960"	"1"
-   "1081174352200509498"	"1"
-   "1081174987684123861"	"1"
-   "1081174987701366243"	"1"
-   "1081174987704391277"	"1"
-   "1081175712151333185"	"1"
-   "1081176254926983680"	"1"
-   "1081176254926468420"	"1"
-   "1081176889414527343"	"1"
-   "1081176889419194416"	"1"
-   "1081176429841640059"	"1"
-   "1081176889422547606"	"1"
-   "1081176889422554082"	"1"
-   "1081176889433542045"	"1"
-   "1081176429857012397"	"1"
-   "1081176889434070730"	"1"
-   "1081176889449585868"	"1"
-   "1081176889455560986"	"1"
-   "135422237312970396"	"1"
-   "135422783198248525"	"1"
-   "135422783201603018"	"1"
-   "135422783206769045"	"1"
-   "132045813576443306"	"1"
-   "132045813582737445"	"1"
-   "132045813592209385"	"1"
-   "132045813597583014"	"1"
-   "132045813598440387"	"1"
-   "127542840211593532"	"1"
-   "127542840210304731"	"1"
-   "127542840232080875"	"1"
-   "124165774084923508"	"1"
-   "124165774110762618"	"1"
-   "124166408198364280"	"1"
-   "124167132539704548"	"1"
-   "124167132543395985"	"1"
-   "123041777042965464"	"1"
-   "124167293868267313"	"1"
-   "116287011821267775"	"1"
-   "116287011846236526"	"1"
-   "5113267898063402223"	"1"
-   "1442987851482109009"	"1"
-   "7887778334135171019"	"1"
-   "496148443798720835"	"1"
-   "4445432053404193335"	"1"
-   "1409504986371007233"	"1"
-   "6573114531502611919"	"1"
-   "8058741862081090327"	"1"
-   "4196456760316438104"	"1"
-   "4602844444966828800"	"1"
-   "6495772846765186612"	"1"
-   "6263886622250643806"	"1"
-   "2064962642674251747"	"1"
-   "811626424803919391"	"1"
-   "7650537255697743226"	"1"
-   "2191645927025823567"	"1"
-  }
  }
  "depots"{
   "250823"{

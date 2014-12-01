@@ -54,18 +54,18 @@ Any key that contains a period `.` must be enclosed by brackets `'[',']'`
 For each path that you want to search, place it after a `'-g'`, after the file name.
 
 ```Bash
-$ vdfedit config.vdf -g UserLocalConfigStore.Software.Valve.Steam.apps.240.LastPlayed
+$ vdfedit config.vdf -g Store.Software.apps.240.LastPlayed
 16
 
-$ vdfedit config.vdf -gUserLocalConfigStore.depots.241.CDN.[content1.steampowered.com].Expires
+$ vdfedit config.vdf -gStore.depots.241.CDN.[content1.steampowered.com].Expires
 1399694892
 
-$ vdfedit config.vdf -gUserLocalConfigStore.Software.Valve.Steam.apps."218_Black Mesa".LastPlayed
+$ vdfedit config.vdf -gStore.Software.apps."218_Black Mesa".LastPlayed
 1400475046
 
-$ vdfedit config.vdf -g UserLocalConfigStore.system.EnableGameOverlay \
--gUserLocalConfigStore.system.JumplistSettings \
--gUserLocalConfigStore.system.GameOverlayHomePage
+$ vdfedit config.vdf -g Store.system.EnableGameOverlay \
+-gStore.system.JumplistSettings \
+-gStore.system.GameOverlayHomePage
 1,52976,https://encrypted.google.com
 ```
 
@@ -74,14 +74,14 @@ You can set the seperator between each returned value by setting the `'-d'` argu
 For each value that you want to set, place it and the path to it after a `'-s'`, after the file name.
 
 ```Bash
-$ vdfedit config.vdf -s UserLocalConfigStore.Software.Valve.Steam.apps.240.LastPlayed=0000000000
+$ vdfedit config.vdf -s Store.Software.apps.240.LastPlayed=0000000000
 ```
 
 If you want to write the new data to a different file, set the `'-o'` argument.
 
 ```Bash
 $ vdfedit config.vdf -o config.new.vdf \
--s UserLocalConfigStore.Software.Valve.Steam.apps.240.LastPlayed=0000000000
+-s Store.Software.apps.240.LastPlayed=0000000000
 ```
 
 [1]: https://github.com/noriah/PyVDF "PyVDF"
