@@ -5,43 +5,31 @@
 # Utilizes PyVDF                      #
 # https://github.com/noriah/PyVDF  #
 # Author: noriah              #
-# Copyright (c) 2013 noriah   #
+# Copyright (c) 2014 noriah   #
 #######################################
 
 import sys
 import re
 import argparse
-from collections import OrderedDict
 
 from PyVDF import *
+
+VDFParser.useFastDict(False)
+
+VDFWriter.useFastDict(False)
 
 def FlattenArray(array):
     out = list()
     for a in array.keys():
-        if re.search("\.", a) != None: b = "[" + a + "]"
-        else: b = a
+        b = a
+        if re.search("\.", b) != None: b = "[" + b + "]"
+        if re.search(" ", b) != None: b = '"' + b + '"'
         if isinstance(array[a], dict):
             out.append(b)
             c = FlattenArray(array[a])
-            c = [b + '.{0}'.format(i) for i in c]
+            c = ['{0}.{1}'.format(b,i) for i in c]
             out += c
-        else: out.append(b + " " + array[a])
-    return out
-
-def FlattenArrayExport(array):
-    out = list()
-    for a in array.keys():
-        if re.search("\.", a) != None: b = "[" + a + "]"
-        else: b = a
-        if isinstance(array[a], OrderedDict):
-            c = FlattenArrayExport(array[a])
-            c = [b + '.{0}'.format(i) for i in c]
-            out += c
-        else:
-            array[a] = re.sub('{', '\\{', re.sub('}', '\\}', array[a]))
-            if re.search(",", array[a]) is not None: r = '{' + array[a] + '}'
-            else: r = array[a]
-            out.append(b + "=" + r)
+        else: out.append('{0}="{1}"'.format(b,array[a]))
     return out
 
 def main():
@@ -70,36 +58,35 @@ def main():
     parser.add_argument('-s', '--set',
                         action="append",
                         type=str,
-                        help="Add a key value pair to the vdf",
+                        help="Add a key-value pair to the vdf",
                         metavar="key=value",
                         dest="sets")
 
     parser.add_argument('-d', '--delim',
-                        default="+",
+                        default=",",
                         type=str,
                         help="Set the string used to separate found values. Defaults to '+'",
                         metavar="str",
                         dest="delim")
 
-    # if not sys.stdin.isatty():
-    #   var2 = sys.stdin.read()
-    #   var2 = re.sub('\\n', '', var2)
-    #   sys.argv.append(var2)
-    # length = len(sys.argv)
+    if not sys.stdin.isatty():
+        import shlex
+        var2 = sys.stdin.read()
+        var2 = re.sub('\\n', ' ', var2)
+        sys.argv += shlex.split(var2)
 
     args = parser.parse_args()
 
-    args.outfile = args.outfile if args.outfile else (args.infile if args.infile else None)
+    args.outfile = args.outfile if args.outfile else args.infile if args.infile else None
 
-    vdf = VDFParser(args.infile)
-    gets = args.gets
-    sets = args.sets
+    vdf, gets, sets = VDFParser(args.infile), args.gets, args.sets
 
     if args.gets is not None or args.sets is not None:
+
         if args.gets is not None:
             gets = vdf.findMany(args.gets)
             for g in gets:
-                if isinstance(g, OrderedDict):
+                if isinstance(g, dict):
                     gets.remove(g)
                     print("\n".join(FlattenArray(g)).decode("string-escape"))
             if len(gets):
@@ -112,19 +99,8 @@ def main():
 
     else:
         if vdf != None:
-            pass
-            #print("\n".join(FlattenArray(vdf.getData())))
+            print("\n".join(FlattenArray(vdf.getData())))
 
 
 if __name__ == "__main__":
-    import cProfile
-    pr = cProfile.Profile()
-    pr.enable()
     main()
-    pr.disable()
-    pr.print_stats('cumulative')
-
-
-# if sys.argv[2] == '-g':
-#               print(',\n'.join(FlattenArrayExport(vdf.getData())).replace("\"", "\\\""))
-#               return

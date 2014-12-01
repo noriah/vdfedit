@@ -1,14 +1,14 @@
 vdfedit
 ==
 
-Easy and fast Python Valve Data Format (VDF) Reader and Writer
+Easy and fast Python Valve Data File (VDF) Reader and Writer
 
 ###What is a VDF?
-A VDF, or Valve Data Format file, is a file that uses Valve's KeyValues format.
+A VDF, or Valve Data File, is a file that uses Valve's KeyValues format.
 
 https://developer.valvesoftware.com/wiki/KeyValues#File_Format
 ####Valve Files that use the KeyValues format
-* .vdf (Valve Data Format)
+* .vdf (Valve Data File)
 * .acf (Application Cache File)
 * .vmt (Valve Material Type)
 * Some .cfg (Configuration File), Usually those found in Source Engine bin Folder
@@ -24,7 +24,7 @@ vdfedit
 ├── PyVDF.py
 ```
 You will probably have to make vdfedit executable
-```
+```Bash
 chmod +x vdfedit
 ```
 Thats it.
@@ -33,30 +33,55 @@ What is vdfedit?
 --
 vdfedit is a program that makes use of [PyVDF] [1] to create an easy to use VDF editor.
 
-
 Using VDF Edit is simple:
-`vdfedit (filename)[,file to write to] [path[,nextpath]`
-
-Using it alone will produce usage instructions.
+```Bash
+usage: vdfedit [-h] [-o FILE] [-g key] [-s key=value] [-d str] FILE
+```
 
 ###Paths
-Paths are what vdfedit uses to find and retrieve keys.
-
-Think of it like a maze,
-
+Paths are what vdfedit uses to find and retrieve values.
 
 ####Reading Paths
-With a file, it will list out all the key-value pairs in the file.
+Without any get or set options, the output will be a list of Keys and Values
 
 Ex. `PathHead.NextPath.OneMoreLevel.Key Value`
 
-Formatting Values is a bit tricky
-Any value that contains a comma `','` must be enclosed by brackes `'{}'`
-To use a bracket in value, you must escape it: `'\{','\}'`
+Formatting Keys is a bit tricky
+Any key that contains a period `.` must be enclosed by brackets `'[',']'`
 
-To get an example of how to format a file, find a vdf on your computer (Try in your steam folder), and run vdfedit with a `'-g'` after the filename. I dont recomend you do this on a very long file, also you cant uses these statements at command line unless you escape the spaces correctly
+####Getting/Setting Values from Paths
 
-####Getting Paths
-Inserting a path after the filename will return the value for that path, or nothing if the path was not found
+For each path that you want to search, place it after a `'-g'`, after the file name.
+
+```Bash
+$ vdfedit config.vdf -g UserLocalConfigStore.Software.Valve.Steam.apps.240.LastPlayed
+16
+
+$ vdfedit config.vdf -gUserLocalConfigStore.depots.241.CDN.[content1.steampowered.com].Expires
+1399694892
+
+$ vdfedit config.vdf -gUserLocalConfigStore.Software.Valve.Steam.apps."218_Black Mesa".LastPlayed
+1400475046
+
+$ vdfedit config.vdf -g UserLocalConfigStore.system.EnableGameOverlay \
+-gUserLocalConfigStore.system.JumplistSettings \
+-gUserLocalConfigStore.system.GameOverlayHomePage
+1,52976,https://encrypted.google.com
+```
+
+You can set the seperator between each returned value by setting the `'-d'` argument
+
+For each value that you want to set, place it and the path to it after a `'-s'`, after the file name.
+
+```Bash
+$ vdfedit config.vdf -s UserLocalConfigStore.Software.Valve.Steam.apps.240.LastPlayed=0000000000
+```
+
+If you want to write the new data to a different file, set the `'-o'` argument.
+
+```Bash
+$ vdfedit config.vdf -o config.new.vdf \
+-s UserLocalConfigStore.Software.Valve.Steam.apps.240.LastPlayed=0000000000
+```
 
 [1]: https://github.com/noriah/PyVDF "PyVDF"
