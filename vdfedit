@@ -19,88 +19,74 @@ VDFParser.useFastDict(False)
 VDFWriter.useFastDict(False)
 
 def FlattenArray(array):
-    out = list()
-    for a in array.keys():
-        b = a
-        if re.search("\.", b) != None: b = "[" + b + "]"
-        if re.search(" ", b) != None: b = '"' + b + '"'
-        if isinstance(array[a], dict):
-            out.append(b)
-            c = FlattenArray(array[a])
-            c = ['{0}.{1}'.format(b,i) for i in c]
-            out += c
-        else: out.append('{0}="{1}"'.format(b,array[a]))
-    return out
+  out = list()
+  for a in array.keys():
+    b = a
+    if re.search("\.", b) != None: b = "[" + b + "]"
+    if re.search(" ", b) != None: b = '"' + b + '"'
+    if isinstance(array[a], dict):
+      out.append(b)
+      out += ['{0}.{1}'.format(b,i) for i in FlattenArray(array[a])]
+    else: out.append('{0}="{1}"'.format(b,array[a]))
+  return out
 
 def main():
 
-    parser = argparse.ArgumentParser(prog="vdfedit",
-                                     description="Read and Write VDF KeyValue Files")
+  parser = argparse.ArgumentParser(prog="vdfedit",
+                                   description="Read and Write VDF KeyValue Files")
 
-    parser.add_argument('infile',
-                        type=str,
-                        help="The file to Read",
-                        metavar="FILE")
+  parser.add_argument('infile', type=str,
+                      help="The file to Read",
+                      metavar="FILE")
 
-    parser.add_argument('-o', '--out',
-                        type=str,
-                        help="The file to Write out to Defaults to the infile",
-                        metavar="FILE",
-                        dest="outfile")
+  parser.add_argument('-o', '--out', type=str,
+                      help="The file to Write out to Defaults to the infile",
+                      metavar="FILE", dest="outfile")
 
-    parser.add_argument('-g', '--get',
-                        action="append",
-                        type=str,
-                        help="Add a key to Search For",
-                        metavar="key",
-                        dest="gets")
+  parser.add_argument('-g', '--get', action="append", type=str,
+                      help="Add a key to Search For",
+                      metavar="key", dest="gets")
 
-    parser.add_argument('-s', '--set',
-                        action="append",
-                        type=str,
-                        help="Add a key-value pair to the vdf",
-                        metavar="key=value",
-                        dest="sets")
+  parser.add_argument('-s', '--set', action="append", type=str,
+                      help="Add a key-value pair to the vdf",
+                      metavar="key=value", dest="sets")
 
-    parser.add_argument('-d', '--delim',
-                        default=",",
-                        type=str,
-                        help="Set the string used to separate found values. Defaults to '+'",
-                        metavar="str",
-                        dest="delim")
+  parser.add_argument('-d', '--delim', default=",", type=str,
+                      help="Set the string used to separate found values. Defaults to '+'",
+                      metavar="str", dest="delim")
 
-    if not sys.stdin.isatty():
-        import shlex
-        var2 = sys.stdin.read()
-        var2 = re.sub('\\n', ' ', var2)
-        sys.argv += shlex.split(var2)
+  if not sys.stdin.isatty():
+    import shlex
+    var2 = sys.stdin.read()
+    var2 = re.sub('\\n', ' ', var2)
+    sys.argv += shlex.split(var2)
 
-    args = parser.parse_args()
+  args = parser.parse_args()
 
-    args.outfile = args.outfile if args.outfile else args.infile if args.infile else None
+  args.outfile = args.outfile if args.outfile else args.infile if args.infile else None
 
-    vdf, gets, sets = VDFParser(args.infile), args.gets, args.sets
+  vdf, gets, sets = VDFParser(args.infile), args.gets, args.sets
 
-    if args.gets is not None or args.sets is not None:
+  if args.gets is not None or args.sets is not None:
 
-        if args.gets is not None:
-            gets = vdf.findMany(args.gets)
-            for g in gets:
-                if isinstance(g, dict):
-                    gets.remove(g)
-                    print("\n".join(FlattenArray(g)).decode("string-escape"))
-            if len(gets):
-                print(args.delim.join(gets).decode("string-escape"))
-        
-        if args.sets is not None:
-            writer = VDFWriter(args.outfile, vdf.getData())
-            writer.editMany(args.sets)
-            writer.write()
+    if args.gets is not None:
+      gets = vdf.findMany(args.gets)
+      for g in gets:
+        if isinstance(g, dict):
+          gets.remove(g)
+          print("\n".join(FlattenArray(g)).decode("string-escape"))
+      if len(gets):
+        print(args.delim.join(gets).decode("string-escape"))
+    
+    if args.sets is not None:
+      writer = VDFWriter(args.outfile, vdf.getData())
+      writer.editMany(args.sets)
+      writer.write()
 
-    else:
-        if vdf != None:
-            print("\n".join(FlattenArray(vdf.getData())))
+  else:
+    if vdf != None:
+      print("\n".join(FlattenArray(vdf.getData())))
 
 
 if __name__ == "__main__":
-    main()
+  main()
