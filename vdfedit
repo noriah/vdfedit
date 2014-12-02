@@ -14,8 +14,6 @@ import argparse
 
 from PyVDF import PyVDF
 
-PyVDF.useFastDict(False)
-
 def FlattenArray(array):
   out = list()
   for a in array.keys():
@@ -40,22 +38,48 @@ def main():
   parser.add_argument('-o', '--out', type=str,
                       help="The file to Write out to Defaults to the infile",
                       metavar="FILE", dest="outfile")
+  
+  parser.add_argument('-p', '--print', action='store_true',
+                      help="Print the file as groups of Paths.Key=Value",
+                      dest="print_flat")
 
   parser.add_argument('-g', '--get', action="append", type=str,
                       help="Add a key to Search For",
                       metavar="key", dest="gets")
 
   parser.add_argument('-s', '--set', action="append", type=str,
-                      help="Add a key-value pair to the vdf",
+                      help="Add/set a key-value pair in the vdf",
                       metavar="key=value", dest="sets")
 
+  parser.add_argument('-w', '--write', action='store_true',
+                      help='Write out the data regardless of setting a value.',
+                      dest="write_file")
+
+  parser.add_argument('-c', '--check', action='store_true',
+                      help='Check the file for validity',
+                      dest="check_file")
+
   parser.add_argument('-d', '--delim', default=",", type=str,
-                      help="Set the string used to separate found values. Defaults to '+'",
+                      help="Set the string used to separate found values. Defaults to ','",
                       metavar="str", dest="delim")
 
-  parser.add_argument('-p', '--print', action='store_true',
-                      help="Print the file as groups of Paths.Key=Value",
-                      dest="print_flat")
+  parser.add_argument('--indent', default='\t', type=str,
+                      help="Set the indention used when writing out a file. Defaults to \\t",
+                      metavar="str", dest="indent")
+
+  parser.add_argument('--spacing', default='\t\t', type=str,
+                      help="Set the spacing used when writing out a file. Defaults to \\t\\t",
+                      metavar="str", dest="spacing")
+
+  parser.add_argument('--condense', '--use-condensed', action='store_true',
+                      help='Use consensed output when writing a file',
+                      dest="use_condensed")
+
+  parser.add_argument('--fast', '--faster-reading', action='store_true',
+                      help='''Use faster reading. **Note** If you write a file
+                      while this option is set, your output will not be in the
+                      same order as the original file''',
+                      dest="use_speed")
 
   if not sys.stdin.isatty():
     import shlex
@@ -65,9 +89,14 @@ def main():
 
   args = parser.parse_args()
 
+  PyVDF.setCondensed(args.use_condensed)
+  PyVDF.setIndention(args.indent.replace("\\t", "\t"))
+  PyVDF.setSpacing(args.spacing.replace("\\t", "\t"))
+  PyVDF.useFastDict(args.use_speed)
+
   args.outfile = args.outfile if args.outfile else args.infile if args.infile else None
 
-  if args.gets is not None or args.sets is not None or args.print_flat:
+  if args.gets is not None or args.sets is not None or args.print_flat or args.write_file or args.check_file:
     vdf, gets, sets = PyVDF(), args.gets, args.sets
     vdf.load_file(args.infile)
 
@@ -91,16 +120,20 @@ def main():
         try:
           setsa((string.split("=", 1)))
         except ValueError:
-          print("Statement Contains no Value to set (Missing the = sign)\n {}".format(string))
+          parser.print_usage()
+          print("vdfedit: error: set statement missing value\n '{}'".format(string))
           return
       vdf.editMany(sets)
+    
+    if args.sets is not None or args.write_file:
       vdf.write_file(args.outfile)
 
     if args.print_flat:
       print("\n".join(FlattenArray(vdf.getData())))
 
   else:
-    print(" At least one of --get, --set or --print is required.")
+    parser.print_usage()
+    print("vdfedit: error: at least one of -p, -g, -s, -w or -c required")
     return
 
 
