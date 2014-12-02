@@ -12,11 +12,10 @@ import sys
 import re
 import argparse
 
-from PyVDF import *
+from PyVDF import PyVDF
 
-VDFParser.useFastDict(False)
-
-VDFWriter.useFastDict(False)
+PyVDF.useFastDict(False)
+PyVDF.setCondensed(True)
 
 def FlattenArray(array):
   out = list()
@@ -55,6 +54,10 @@ def main():
                       help="Set the string used to separate found values. Defaults to '+'",
                       metavar="str", dest="delim")
 
+  parser.add_argument('-p', '--print', action='store_true',
+                      help="Print the file as groups of Paths.Key=Value",
+                      dest="print_flat")
+
   if not sys.stdin.isatty():
     import shlex
     var2 = sys.stdin.read()
@@ -65,10 +68,14 @@ def main():
 
   args.outfile = args.outfile if args.outfile else args.infile if args.infile else None
 
-  vdf, gets, sets = VDFParser(args.infile), args.gets, args.sets
+  if args.gets is not None or args.sets is not None or args.print_flat:
+    vdf, gets, sets = PyVDF(), args.gets, args.sets
+    vdf.load_file(args.infile)
 
-  if args.gets is not None or args.sets is not None:
-
+    if args.print_flat and args.gets is not None:
+      print(" --get cannot be accompanied by --print")
+      return
+      
     if args.gets is not None:
       gets = vdf.findMany(args.gets)
       for g in gets:
@@ -79,13 +86,23 @@ def main():
         print(args.delim.join(gets).decode("string-escape"))
     
     if args.sets is not None:
-      writer = VDFWriter(args.outfile, vdf.getData())
-      writer.editMany(args.sets)
-      writer.write()
+      sets = list()
+      setsa = sets.append
+      for string in args.sets:
+        try:
+          setsa((string.split("=", 1)))
+        except ValueError:
+          print("Statement Contains no Value to set (Missing the = sign)\n {}".format(string))
+          return
+      vdf.editMany(sets)
+      vdf.write_file(args.outfile)
+
+    if args.print_flat:
+      print("\n".join(FlattenArray(vdf.getData())))
 
   else:
-    if vdf != None:
-      print("\n".join(FlattenArray(vdf.getData())))
+    print(" At least one of --get, --set or --print is required.")
+    return
 
 
 if __name__ == "__main__":
