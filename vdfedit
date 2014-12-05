@@ -22,8 +22,8 @@ def FlattenArray(array):
     if re.search(" ", b) != None: b = '"' + b + '"'
     if isinstance(array[a], dict):
       out.append(b)
-      out += ['{0}.{1}'.format(b,i) for i in FlattenArray(array[a])]
-    else: out.append('{0}="{1}"'.format(b,array[a]))
+      out += ['{}.{}'.format(b,i) for i in FlattenArray(array[a])]
+    else: out.append('{}="{}"'.format(b,array[a]))
   return out
 
 def main():
@@ -59,6 +59,10 @@ def main():
                       help='Check the file for validity',
                       dest="check_file")
 
+  parser.add_argument('-len', '--token-length', default=1200, type=int,
+                      help="Set the maximum token length. Larger values cause slower searching, however smaller values can result in errors. Defaults to 1200",
+                      metavar="int", dest="tokenLength")
+
   parser.add_argument('-d', '--delim', default=",", type=str,
                       help="Set the string used to separate found values. Defaults to ','",
                       metavar="str", dest="delim")
@@ -93,6 +97,7 @@ def main():
   PyVDF.setIndention(args.indent.replace("\\t", "\t"))
   PyVDF.setSpacing(args.spacing.replace("\\t", "\t"))
   PyVDF.useFastDict(args.use_speed)
+  PyVDF.setMaxTokenLength(args.tokenLength)
 
   args.outfile = args.outfile if args.outfile else args.infile if args.infile else None
 
