@@ -6,4 +6,4 @@ install:
   - pip install PyVDF
 
 script:
-  - run_tests.sh
+  - ./run_tests.sh
