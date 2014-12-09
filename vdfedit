@@ -24,8 +24,7 @@ THE SOFTWARE.
 import sys
 import re
 import argparse
-
-from PyVDF import PyVDF
+import PyVDF
 
 def FlattenArray(array):
   out = list()

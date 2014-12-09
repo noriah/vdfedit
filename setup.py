@@ -32,12 +32,10 @@ setup(
     tests_require=['pytest'],
     install_requires=['PyVDF>=1.0.2'],
     url='https://github.com/noriah/vdfedit',
-    license='MIT',
     author='noriah',
     author_email='vix@noriah.dev',
     keywords = "VDF KeyValues Valve PyVDF",
     description='Fast and Easy Python Valve Data File (VDF) Reader and Writer',
-    long_description=read('README.md'),
     platforms='any',
     cmdclass={'test': PyTest},
     classifiers = [
