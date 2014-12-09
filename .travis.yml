@@ -4,10 +4,6 @@ python:
 
 install:
   - pip install PyVDF
-  - pip install coveralls
 
 script:
-  - "coverage run --source=vdfedit setup.py test"
-  
-after_success:
-  coveralls
+  - run_tests.sh
