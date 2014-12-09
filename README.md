@@ -2,8 +2,9 @@ vdfedit
 ==
 
 Fast and Easy Python Valve Data File (VDF) Reader and Writer
-<!-- 
-[![Build Status](https://img.shields.io/travis/noriah/vdfedit.svg?branch=master&style=flat-square)](https://travis-ci.org/noriah/vdfedit)[![PyPI version](https://img.shields.io/pypi/v/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)[![Coverage Status](https://img.shields.io/coveralls/noriah/vdfedit.svg?style=flat-square)](https://coveralls.io/r/noriah/vdfedit)[![Downloads](https://img.shields.io/pypi/dm/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)-->
+ 
+<!-- [![Build Status](https://img.shields.io/travis/noriah/vdfedit.svg?branch=master&style=flat-square)](https://travis-ci.org/noriah/vdfedit)[![Coverage Status](https://img.shields.io/coveralls/noriah/vdfedit.svg?style=flat-square)](https://coveralls.io/r/noriah/vdfedit) -->
+[![PyPI version](https://img.shields.io/pypi/v/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)[![Downloads](https://img.shields.io/pypi/dm/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)
 
 ###What is a VDF?
 A VDF, or Valve Data File, is a file that uses Valve's KeyValues format.
