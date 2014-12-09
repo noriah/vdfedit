@@ -1,1 +1,9 @@
 *.pyc
+__init__.py
+__pycache__
+*.egg-info
+dist
+build
+
+README.rst
+

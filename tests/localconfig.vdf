@@ -1,0 +1,970 @@
+"UserLocalConfigStore"
+{
+	"friends"
+	{
+		"PersonaName"		"DJ Wolf #Linux :\\"
+		"FooBar-1"
+		{
+			"name"		"Metacore"
+			"NameHistory"
+			{
+				"0"		"Metacore"
+			}
+			"avatar"		"FooBar"
+		}
+		"103582791429535324"
+		{
+			"name"		"Black Mesa"
+			"Tag"		"BMS"
+			"avatar"		"e1b1ccfd4136fca795a2bba4c1ae3db5ead29a11"
+		}
+		"103582791429523489"
+		{
+			"name"		"FacepunchStudios"
+			"Tag"		"FP"
+			"avatar"		"80b474cdf2922d718c4bc1c59482c092f8af921e"
+		}
+		"103582791432805705"
+		{
+			"avatar"		"cfb65439267856d076239231abe12991d718a530"
+			"name"		"Steam Workshop"
+		}
+		"103582791434277245"
+		{
+			"name"		"Steam Trading Cards Group"
+			"Tag"		"STCards"
+			"avatar"		"2ce81e0b8f1c748f86d1ca4230a7f45dd0b906b1"
+		}
+		"103582791431199201"
+		{
+			"name"		"[ELNO] ElectroNoodles.co.uk"
+			"Tag"		"ELNO"
+			"avatar"		"83b95735c9d520559f21869d19f6df69f3643d11"
+		}
+		"103582791433303913"
+		{
+			"name"		"Source Filmmaker"
+			"avatar"		"a2ac9b9bfd3f560f48d184c90f4e6baaaa4bd92a"
+		}
+		"103582791433699581"
+		{
+			"name"		"Steam for Linux"
+			"avatar"		"750e6650be3ffe428fb25dc3fc30118f798358a8"
+		}
+		"103582791430075523"
+		{
+			"name"		"Portal"
+			"avatar"		"cfa928ab4119dd137e50d728e8fe703e4e970aff"
+		}
+		"103582791433918461"
+		{
+			"name"		"Steam Client Beta"
+			"Tag"		"SteamBeta"
+			"avatar"		"9b62d03b03693bbffa90947d8435f5238ea86cac"
+		}
+		"103582791430035122"
+		{
+			"name"		"Edge Gamers Organization: CSS Division"
+			"Tag"		"CS:S"
+			"avatar"		"381d1f88b07b91547d62a56e9729069b1c83faec"
+		}
+		"103582791431276567"
+		{
+			"name"		"EdgeGamers PSC"
+			"Tag"		"eGOPSC"
+			"avatar"		"f6899b7c4849aefefa227d440e6f48e7ff28b4f9"
+		}
+		"103582791432835131"
+		{
+			"name"		"'sheiitbro♥~"
+			"Tag"		"Amfetamin▼"
+			"avatar"		"3e2447839f424a73d114ab2377e8c1bf3a45db71"
+		}
+		"103582791433074867"
+		{
+			"name"		"Meet The Stats"
+			"Tag"		"backpack.tf"
+			"avatar"		"aba8204acb758f82696dece23bcb04b3c4c41746"
+		}
+		"103582791433239423"
+		{
+			"name"		"The Snack Shack TF2 Server"
+			"Tag"		"snackshack"
+			"avatar"		"640b5b644d423957dffadd796d4531669abaa0b4"
+		}
+		"103582791434499423"
+		{
+			"name"		"SkepticalGaming.Com"
+			"Tag"		"skG.com"
+			"avatar"		"9013f40b0286be92b9eb058c67db90f0eee8e2fc"
+		}
+		"FooBar-2"
+		{
+			"name"		"Corporeal Balustrade 💃"
+			"NameHistory"
+			{
+				"0"		"Corporeal Balustrade 💃"
+				"1"		"Corporeal Balustrade"
+				"2"		"Corporate Bastard"
+				"3"		"Maximillion Theodore D'Fontaine"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-3"
+		{
+			"name"		"Space Tac⚬"
+			"NameHistory"
+			{
+				"0"		"Space Tac⚬"
+				"1"		"Space Taco"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-4"
+		{
+			"name"		"Yaster77 King of the Homeless"
+			"NameHistory"
+			{
+				"0"		"Yaster77 King of the Homeless"
+			}
+			"avatar"		"FooBar"
+		}
+		"103582791433894832"
+		{
+			"name"		"Freebuild and Kill"
+			"Tag"		"FreeBK"
+			"avatar"		"0000000000000000000000000000000000000000"
+		}
+		"103582791432764050"
+		{
+			"name"		"eGO 10man"
+			"Tag"		"#egO10"
+			"avatar"		"7b98dc8dff489cd796158f9baed7c5c9b75fead7"
+		}
+		"103582791432308751"
+		{
+			"name"		"TF2 Outpost"
+			"Tag"		"by Sneeza"
+			"avatar"		"c6489dd239a9fce60ccea64bd21dda118c1c4ec7"
+		}
+		"103582791432538183"
+		{
+			"name"		"La Satoryenne"
+			"Tag"		"ﮒa†o.|"
+			"avatar"		"54101e1a44afaee6ec8f1815c7a80b6fcbc40181"
+		}
+		"103582791431369696"
+		{
+			"name"		"Portal 2"
+			"avatar"		"2e478fc6874d06ae5baf0d147f6f21203291aa02"
+		}
+		"103582791432706584"
+		{
+			"avatar"		"00d6882754a5ab2e1ab54b384a54ac1b40a06baa"
+			"name"		"Holiday Sale Community Group"
+		}
+		"103582791429527027"
+		{
+			"name"		"Edge Gamers Organization"
+			"Tag"		"eGO"
+			"avatar"		"56d1d517900d04ca307852639cb871f7ae40c8c8"
+		}
+		"103582791430075519"
+		{
+			"name"		"Team Fortress 2"
+			"avatar"		"e3f595a92552da3d664ad00277fad2107345f743"
+		}
+		"103582791432188903"
+		{
+			"avatar"		"67d50651265d5b78311caf900965e4e0c0e68e1e"
+			"name"		"Steam Summer Camp "
+		}
+		"FooBar-5"
+		{
+			"name"		"SneekyMan"
+			"NameHistory"
+			{
+				"0"		"SneekyMan"
+				"1"		"-|FGT|-SneekyMan"
+				"2"		"Col. Cross-Eyes The Inaccurate"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-6"
+		{
+			"name"		"PyroMachine"
+			"NameHistory"
+			{
+				"0"		"PyroMachine"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-7"
+		{
+			"name"		"Schrodinger's Cat"
+			"NameHistory"
+			{
+				"0"		"Schrodinger's Cat"
+			}
+			"avatar"		"FooBar"
+		}
+		"66908226"
+		{
+			"name"		"=(eGO)= DJ Wolf #Linux"
+			"NameHistory"
+			{
+				"0"		"=(eGO)= DJ Wolf #Linux"
+				"1"		"=(eGO)= DJ Wolf #Shame"
+				"2"		"=(eGO)= DJ Wolf"
+				"3"		"DJ Wolf"
+				"4"		"Rabbid Hamster"
+				"5"		"=(eGO)= DJ Wolf #Coding"
+				"6"		"=(eGO)= DJ Wolf #Shy"
+				"7"		"DJ Wolf #Shy"
+			}
+			"avatar"		"795b2a5bb5807159b5ce4e80cb0e614c40284ded"
+		}
+		"FooBar-8"
+		{
+			"name"		"The Big Boobaloo"
+			"NameHistory"
+			{
+				"0"		"The Big Boobaloo"
+				"1"		"Boobaloo"
+				"2"		"DANG"
+				"3"		"Brown Sugar"
+				"4"		"Brown Sugar (Boobaloo)"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-9"
+		{
+			"name"		"LegendDragonTaichou"
+			"NameHistory"
+			{
+				"0"		"LegendDragonTaichou"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-10"
+		{
+			"name"		"OFES | Duerdum9"
+			"NameHistory"
+			{
+				"0"		"OFES | Duerdum9"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-11"
+		{
+			"name"		"Chu"
+			"NameHistory"
+			{
+				"0"		"Chu"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-12"
+		{
+			"name"		"Sub Gunner"
+			"NameHistory"
+			{
+				"0"		"Sub Gunner"
+			}
+		}
+		"FooBar-13"
+		{
+			"name"		"ShurFoot"
+			"NameHistory"
+			{
+				"0"		"ShurFoot"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-14"
+		{
+			"name"		"[S.U.L.L.Y.]Sir Fluffy Pikachu"
+			"NameHistory"
+			{
+				"0"		"[S.U.L.L.Y.]Sir Fluffy Pikachu"
+				"1"		"Sir Fluffy Pikachu"
+				"2"		"The Law"
+				"3"		"Funky Pikachu"
+			}
+			"avatar"		"FooBar"
+		}
+		"FooBar-15"
+		{
+			"name"		"Turpsalot"
+			"NameHistory"
+			{
+				"0"		"Turpsalot"
+			}
+			"avatar"		"FooBar"
+		}
+		"Notifications_ShowIngame"		"1"
+		"Sounds_PlayIngame"		"0"
+		"Notifications_ShowOnline"		"0"
+		"Sounds_PlayOnline"		"0"
+		"Notifications_ShowMessage"		"1"
+		"Sounds_PlayMessage"		"1"
+		"AutoSignIntoFriends"		"1"
+		"ShowTimeInChatLogCheck"		"1"
+		"AlwaysNewChatWindow"		"0"
+		"ChatFlashMode"		"0"
+		"VoiceReceiveVolume"		"127"
+		"PersonaStateDesired"		"1"
+		"ShowFriendsPanelInOverlay"		"1"
+		"103582791434575289"
+		{
+			"name"		"eSportgaming.de"
+			"Tag"		"eSgDE"
+			"avatar"		"6832d208fc1382ccf47dad7b6f5c607f562f9667"
+		}
+		"103582791433739816"
+		{
+			"name"		"Vault F4 Gaming"
+			"Tag"		"VF4"
+			"avatar"		"f9816a74ce2ad37f47bca3616fffaf5b85af4461"
+		}
+		"103582791434672565"
+		{
+			"name"		"Steam Universe"
+			"avatar"		"e34e65ef2ef16093d4428c930fbcc42490522ed3"
+			"Tag"		"Steam U"
+		}
+		"FooBar-16"
+		{
+			"name"		"Kagster301"
+			"NameHistory"
+			{
+				"0"		"Kagster301"
+			}
+			"avatar"		"FooBar"
+		}
+		"103582791434796278"
+		{
+			"name"		"Steam In-Home Streaming"
+			"Tag"		"homestream"
+			"avatar"		"4302a6bc64a305889d41eafa5fb9aca52108cd98"
+		}
+	}
+	"apps"
+	{
+		"vbc"		"0"
+		"240"
+		{
+			"OverlayAppEnable"		"0"
+		}
+		"380"
+		{
+			"OverlayAppEnable"		"1"
+		}
+	}
+	"Licenses"
+	{
+		"FooBar"		"BarFoo"
+	}
+	"apptickets"
+	{
+		"Bar.Foo"		"FooBar"
+	}
+	"Software"
+	{
+		"Valve"
+		{
+			"Steam"
+			{
+				"apps"
+				{
+					"5"
+					{
+						"LastPlayed"		"1368483928"
+					}
+					"205"
+					{
+						"LastPlayed"		"86400"
+					}
+					"211"
+					{
+						"LastPlayed"		"86400"
+					}
+					"215"
+					{
+						"LastPlayed"		"86400"
+					}
+					"218"
+					{
+						"LastPlayed"		"86400"
+					}
+					"219"
+					{
+						"LastPlayed"		"86400"
+					}
+					"220"
+					{
+						"LastPlayed"		"1378767997"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+						"BadgeData"		"BarFoo"
+					}
+					"240"
+					{
+						"LastPlayed"		"1385514031"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+					}
+					"280"
+					{
+						"LastPlayed"		"1340434800"
+					}
+					"310"
+					{
+						"LastPlayed"		"1368485592"
+					}
+					"320"
+					{
+						"LastPlayed"		"1361606400"
+					}
+					"340"
+					{
+						"LastPlayed"		"86400"
+					}
+					"360"
+					{
+						"LastPlayed"		"86400"
+					}
+					"380"
+					{
+						"LastPlayed"		"1378768038"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+					}
+					"400"
+					{
+						"LastPlayed"		"1345014000"
+					}
+					"410"
+					{
+						"LastPlayed"		"86400"
+					}
+					"420"
+					{
+						"LastPlayed"		"1378768131"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+					}
+					"440"
+					{
+						"LastPlayed"		"1385425892"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+						"BadgeData"		"FooBar"
+					}
+					"550"
+					{
+						"LastPlayed"		"1385512729"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+						"BadgeData"		"BarFoo"
+					}
+					"570"
+					{
+						"LastPlayed"		"1363244400"
+					}
+					"620"
+					{
+						"LastPlayed"		"1371531037"
+					}
+					"629"
+					{
+						"LastPlayed"		"1369779435"
+					}
+					"630"
+					{
+						"LastPlayed"		"1332054000"
+					}
+					"730"
+					{
+						"LastPlayed"		"1368946800"
+					}
+					"1250"
+					{
+						"LastPlayed"		"1376243991"
+					}
+					"1840"
+					{
+						"LastPlayed"		"1343977200"
+					}
+					"4000"
+					{
+						"LastPlayed"		"1383409912"
+						"LaunchOptions"		"echo \"%command%\"; fsgamer --exec=\"steam-game\""
+						"BadgeData"		"FooBar"
+					}
+					"4010"
+					{
+						"LastPlayed"		"1347433200"
+					}
+					"8600"
+					{
+						"LastPlayed"		"1335510000"
+					}
+					"8980"
+					{
+						"LastPlayed"		"1357113600"
+					}
+					"12900"
+					{
+						"LastPlayed"		"1371490801"
+					}
+					"12910"
+					{
+						"LastPlayed"		"1324713600"
+					}
+					"13140"
+					{
+						"LastPlayed"		"1316329200"
+					}
+					"17500"
+					{
+						"LastPlayed"		"86400"
+					}
+					"17505"
+					{
+						"LastPlayed"		"86400"
+					}
+					"17520"
+					{
+						"LastPlayed"		"1363417200"
+					}
+					"17525"
+					{
+						"LastPlayed"		"1370987205"
+					}
+					"17550"
+					{
+						"LastPlayed"		"86400"
+					}
+					"17580"
+					{
+						"LastPlayed"		"86400"
+					}
+					"17700"
+					{
+						"LastPlayed"		"86400"
+					}
+					"17740"
+					{
+						"LastPlayed"		"86400"
+					}
+					"21930"
+					{
+						"LastPlayed"		"86400"
+					}
+					"22380"
+					{
+						"LastPlayed"		"1371503705"
+					}
+					"31280"
+					{
+						"LastPlayed"		"1375668828"
+					}
+					"42690"
+					{
+						"LastPlayed"		"1348902000"
+					}
+					"47870"
+					{
+						"LastPlayed"		"1366527600"
+					}
+					"49520"
+					{
+						"LastPlayed"		"1365663600"
+					}
+					"63200"
+					{
+						"LastPlayed"		"86400"
+					}
+					"80747"
+					{
+						"LastPlayed"		"86400"
+					}
+					"80762"
+					{
+						"LastPlayed"		"86400"
+					}
+					"91900"
+					{
+						"LastPlayed"		"1342854000"
+					}
+					"99900"
+					{
+						"LastPlayed"		"1324713600"
+					}
+					"105600"
+					{
+						"LastPlayed"		"1381712226"
+					}
+					"203850"
+					{
+						"LastPlayed"		"1340175600"
+					}
+					"204360"
+					{
+						"LastPlayed"		"1362988800"
+					}
+					"204610"
+					{
+						"LastPlayed"		"1345100400"
+					}
+					"205700"
+					{
+						"LastPlayed"		"1345100400"
+					}
+					"212720"
+					{
+						"LastPlayed"		"1343890800"
+					}
+					"218230"
+					{
+						"LastPlayed"		"1353571200"
+					}
+					"223530"
+					{
+						"LastPlayed"		"1375741367"
+					}
+					"230410"
+					{
+						"LastPlayed"		"1372361603"
+					}
+					"234710"
+					{
+						"LastPlayed"		"1375671748"
+					}
+					"235780"
+					{
+						"LastPlayed"		"1369870021"
+					}
+					"243730"
+					{
+						"LastPlayed"		"1376010504"
+					}
+					"560"
+					{
+						"LastPlayed"		"1363219155"
+					}
+					"13260"
+					{
+						"LastPlayed"		"1366071011"
+					}
+					"214850"
+					{
+						"LastPlayed"		"1349563300"
+					}
+					"22000"
+					{
+						"LaunchOptions"		"primusrun %command%"
+						"LastPlayed"		"1377737694"
+					}
+					"17410"
+					{
+						"LastPlayed"		"1383431152"
+					}
+				}
+				"LastPlayedTimesSyncTime"		"1385514031"
+				"PlayerLevel"		"11"
+				"SSAVersion"		"2"
+			}
+		}
+	}
+	"Offline"
+	{
+		"Ticket"		"BarFoo"
+		"Signature"		"FooBar"
+	}
+	"ParentalSettings"
+	{
+		"settings"		"BarFoo"
+		"Signature"		"FooBar"
+	}
+	"AppInfoChangeNumber"		"BarFoo"
+	"CloudKey"		"FooBar"
+	"CloudKeyCRC"		"BarFoo"
+	"system"
+	{
+		"NavUrlBar"		"1"
+		"EnableGameOverlay"		"1"
+		"InGameOverlayShortcutKey"		"Shift	KEY_TAB"
+		"InGameOverlayScreenshotNotification"		"1"
+		"InGameOverlayScreenshotPlaySound"		"1"
+		"InGameOverlayScreenshotSaveUncompressed"		"0"
+		"InGameOverlayScreenshotHotKey"		"KEY_F12"
+		"GameOverlayHomePage"		"http://www.google.com"
+		"UsePushToTalk"		"1"
+		"PushToTalkKey"		"56"
+	}
+	"News"
+	{
+		"NotifyAvailableGames"		"1"
+		"Messages"
+		{
+			"Bar.Foo"		"Foo.Bar"
+		}
+	}
+	"DownloadRates"		""
+	"StartupState.Friends"		"1"
+	"depots"
+	{
+		"551"
+		{
+			"CDN"
+			{
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar&h=FooBar"
+					"Expires"		"1377376415"
+				}
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1385340115"
+				}
+				"content1.steampowered.com"
+				{
+					"token"		"?p=43&e=FooBar&h=FooBar"
+					"Expires"		"1385340106"
+				}
+				"content7.steampowered.com"
+				{
+					"token"		"?token=exp=FooBar~acl=/depot/551/*~hmac=FooBar"
+					"Expires"		"1385340115"
+				}
+			}
+		}
+		"552"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar"
+					"Expires"		"1385340177"
+				}
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar"
+					"Expires"		"1377390839"
+				}
+				"content7.steampowered.com"
+				{
+					"token"		"?token=exp=FooBar`acl=/depot/552/*~hmac=FooBar"
+					"Expires"		"1385340177"
+				}
+				"content1.steampowered.com"
+				{
+					"token"		"?p=43&e=FooBar&h=FooBar"
+					"Expires"		"1385340177"
+				}
+			}
+		}
+		"441"
+		{
+			"CDN"
+			{
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar&h=FooBar"
+					"Expires"		"1386117457"
+				}
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1384016000"
+				}
+				"content7.steampowered.com"
+				{
+					"token"		"?token=exp=FooBar~acl=/depot/441/*~hmac=FooBar"
+					"Expires"		"1385687169"
+				}
+				"content1.steampowered.com"
+				{
+					"token"		"?p=43&e=FooBar&h=FooBar"
+					"Expires"		"1385692090"
+				}
+			}
+		}
+		"232253"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1385340083"
+				}
+				"content3.steampowered.com"
+				{
+					"token"		"?l=14&e=FooBar&h=FooBar"
+					"Expires"		"1386117467"
+				}
+				"content7b.steampowered.com"
+				{
+					"token"		"?token=exp=FooBar~acl=/depot/232253/*~hmac=FooBar"
+					"Expires"		"1382201858"
+				}
+				"content7.steampowered.com"
+				{
+					"token"		"?token=exp=FooBar~acl=/depot/232253/*~hmac=FooBar"
+					"Expires"		"1386024591"
+				}
+				"content1.steampowered.com"
+				{
+					"token"		"?p=46&e=FooBar&h=FooBar"
+					"Expires"		"1386024582"
+				}
+			}
+		}
+		"233"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378336487"
+				}
+			}
+		}
+		"224"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378336488"
+				}
+			}
+		}
+		"221"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378336490"
+				}
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar&h=FooBar"
+					"Expires"		"1378336502"
+				}
+			}
+		}
+		"380"
+		{
+			"CDN"
+			{
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar&h=FooBar"
+					"Expires"		"1378347338"
+				}
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378347338"
+				}
+			}
+		}
+		"389"
+		{
+			"CDN"
+			{
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar&h=FooBar"
+					"Expires"		"1378347808"
+				}
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378347823"
+				}
+			}
+		}
+		"420"
+		{
+			"CDN"
+			{
+				"content3.steampowered.com"
+				{
+					"token"		"?l=11&e=FooBar&h=FooBar"
+					"Expires"		"1378351509"
+				}
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378351509"
+				}
+			}
+		}
+		"4001"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378423382"
+				}
+				"content3.steampowered.com"
+				{
+					"token"		"?l=12&e=FooBar&h=FooBar"
+					"Expires"		"1378423406"
+				}
+			}
+		}
+		"4003"
+		{
+			"CDN"
+			{
+				"content3.steampowered.com"
+				{
+					"token"		"?l=12&e=FooBar&h=FooBar"
+					"Expires"		"1378425826"
+				}
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar&h=FooBar"
+					"Expires"		"1378425826"
+				}
+			}
+		}
+		"554"
+		{
+			"CDN"
+			{
+				"content2.steampowered.com"
+				{
+					"token"		"?etime=FooBar"
+					"Expires"		"1385340106"
+				}
+				"content7.steampowered.com"
+				{
+					"token"		"?token=exp=FooBar~acl=/depot/554/*~hmac=FooBar"
+					"Expires"		"1385340187"
+				}
+				"content1.steampowered.com"
+				{
+					"token"		"?p=43&e=FooBar"
+					"Expires"		"1385340187"
+				}
+			}
+		}
+	}
+	"shortcuts"
+	{
+		"a101c18f7eff0453bcc7cf08c1f591bb535619b8"
+		{
+			"LastPlayed"		"1377116767"
+		}
+	}
+	"PackageInfoChangeNumber"		"304869"
+}

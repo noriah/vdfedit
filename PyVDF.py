@@ -1,1 +1,0 @@
-/home/wolf/Projects/Python/PyVDF/PyVDF.py

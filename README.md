@@ -1,7 +1,9 @@
 vdfedit
 ==
 
-Easy and fast Python Valve Data File (VDF) Reader and Writer
+Fast and Easy Python Valve Data File (VDF) Reader and Writer
+
+[![Build Status](https://img.shields.io/travis/noriah/vdfedit.svg?branch=master&style=flat-square)](https://travis-ci.org/noriah/vdfedit)[![PyPI version](https://img.shields.io/pypi/v/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)[![Coverage Status](https://img.shields.io/coveralls/noriah/vdfedit.svg?style=flat-square)](https://coveralls.io/r/noriah/vdfedit)[![Downloads](https://img.shields.io/pypi/dm/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)
 
 ###What is a VDF?
 A VDF, or Valve Data File, is a file that uses Valve's KeyValues format.
@@ -17,12 +19,12 @@ https://developer.valvesoftware.com/wiki/KeyValues#File_Format
 
 Installation
 --
-You need to get [PyVDF] [1]. Place `PyVDF.py` into the root folder vdfedit-master folder.
+
+Requires PyVDF
+```bash
+$ pip install PyVDF
 ```
-vdfedit
-├── vdfedit
-├── PyVDF.py
-```
+
 You will probably have to make vdfedit executable
 ```Bash
 chmod +x vdfedit
@@ -33,9 +35,45 @@ What is vdfedit?
 --
 vdfedit is a program that makes use of [PyVDF] [1] to create an easy to use VDF editor.
 
-Using VDF Edit is simple:
-```Bash
-usage: vdfedit [-h] [-o FILE] [-g key] [-s key=value] [-d str] FILE
+Overview
+
+```bash
+$ vdfedit -h
+usage: vdfedit [-h] [-o FILE] [-p] [-g key] [-s key=value] [-w] [-c]
+               [-len int] [-d str] [--indent str] [--spacing str] [--condense]
+               [--fast]
+               FILE
+
+Read and Write VDF KeyValue Files
+
+positional arguments:
+  FILE                  The file to Read
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o FILE, --out FILE   The file to Write out to Defaults to the infile
+  -p, --print           Print the file as groups of Paths.Key=Value
+  -g key, --get key     Add a key to Search For
+  -s key=value, --set key=value
+                        Add/set a key-value pair in the vdf
+  -w, --write           Write out the data regardless of setting a value.
+  -c, --check           Check the file for validity
+  -len int, --token-length int
+                        Set the maximum token length. Larger values cause
+                        slower searching, however smaller values can result in
+                        errors. Defaults to 1200
+  -d str, --delim str   Set the string used to separate found values. Defaults
+                        to ','
+  --indent str          Set the indention used when writing out a file.
+                        Defaults to \t
+  --spacing str         Set the spacing used when writing out a file. Defaults
+                        to \t\t
+  --condense, --condensed, --use-condensed
+                        Use consensed output when writing a file
+  --fast, --faster-reading
+                        Use faster reading. **Note** If you write a file while
+                        this option is set, your output will not be in the
+                        same order as the original file
 ```
 
 ###Paths
