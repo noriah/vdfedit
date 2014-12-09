@@ -11,8 +11,6 @@ test_results() {
 	fi
 }
 
-ls -la /home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/PyVDF
-
 vdfedit="./vdfedit"
 
 rm -rf tests/out/>/dev/null
