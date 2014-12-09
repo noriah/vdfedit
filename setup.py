@@ -12,6 +12,7 @@ class PyTest(TestCommand):
 
     def run_tests(self):
         import subprocess
+        import pandoc
         p = subprocess.Popen(['./run_tests.sh'],
                              stdout=sys.stdout,
                              stderr=sys.stderr)

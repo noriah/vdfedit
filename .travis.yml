@@ -5,6 +5,7 @@ python:
 install:
   - pip install coveralls
   - pip install PyVDF
+  - pip install pyandoc
 
 script:
   - "coverage run --source=vdfedit setup.py test"
