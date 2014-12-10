@@ -1,15 +1,15 @@
-vdfedit
-==
+# vdfedit
+
 
 Fast and Easy Python Valve Data File (VDF) Reader and Writer
  
-<!-- [![Build Status](https://img.shields.io/travis/noriah/vdfedit.svg?branch=master&style=flat-square)](https://travis-ci.org/noriah/vdfedit)[![Coverage Status](https://img.shields.io/coveralls/noriah/vdfedit.svg?style=flat-square)](https://coveralls.io/r/noriah/vdfedit) -->[![PyPI version](https://img.shields.io/pypi/v/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)[![Downloads](https://img.shields.io/pypi/dm/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)
+[![PyPI version](https://img.shields.io/pypi/v/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)[![Downloads](https://img.shields.io/pypi/dm/vdfedit.svg?style=flat-square)](https://pypi.python.org/pypi/vdfedit)
 
-###What is a VDF?
+##What is a VDF?
 A VDF, or Valve Data File, is a file that uses Valve's KeyValues format.
 
 https://developer.valvesoftware.com/wiki/KeyValues#File_Format
-####Valve Files that use the KeyValues format
+###Valve Files that use the KeyValues format
 * .vdf (Valve Data File)
 * .acf (Application Cache File)
 * .vmt (Valve Material Type)
@@ -91,7 +91,7 @@ Any key that contains a period `.` must be enclosed by brackets `'[',']'`
 
 For each path that you want to search, place it after a `'-g'`, after the file name.
 
-```Bash
+```bash
 $ vdfedit config.vdf -g Store.Software.apps.240.LastPlayed
 16
 
@@ -111,13 +111,13 @@ You can set the seperator between each returned value by setting the `'-d'` argu
 
 For each value that you want to set, place it and the path to it after a `'-s'`, after the file name.
 
-```Bash
+```bash
 $ vdfedit config.vdf -s Store.Software.apps.240.LastPlayed=0000000000
 ```
 
 If you want to write the new data to a different file, set the `'-o'` argument.
 
-```Bash
+```bash
 $ vdfedit config.vdf -o config.new.vdf \
 -s Store.Software.apps.240.LastPlayed=0000000000
 ```
