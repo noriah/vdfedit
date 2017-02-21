@@ -2,9 +2,9 @@ from setuptools import setup
 
 setup(
     name='vdfedit',
-    version='1.0.0',
+    version='1.0.1',
     scripts=['vdfedit'],
-    install_requires=['PyVDF>=1.0.4'],
+    install_requires=['PyVDF>=2.0.0'],
     license='MIT',
     url='https://github.com/noriah/vdfedit',
     author='noriah',
